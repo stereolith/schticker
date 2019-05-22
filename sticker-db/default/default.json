@@ -1,0 +1,25 @@
+{
+    "name": "Wa Da Da",
+    "added": "2019:06:22 09:12:54+02:00",
+    "addedBy": "98010",
+    "location": [
+        {
+            "lat": 50.930839,
+            "lon": 6.935583,
+            "added": "2019:05:22 10:42:54+02:00"
+        },
+        {
+            "lat": 50.930901,
+            "lon": 6.935523,
+            "added": "2019:06:22 09:12:54+02:00"
+        }
+    ],
+    "author": {
+        "name": "Wadada Records",
+        "links": {
+            "facebook": "https://www.facebook.com/wadadarecords/",
+            "logo-design": "http://www.createdbygabe.com/"
+        }
+    },
+    "description": "Logo der Wadada Records, eine Jazz und Soul Plattenfirma. Logodesign von GABE."
+}

@@ -14,6 +14,8 @@ import {
   ViroMaterials
 } from 'react-viro';
 
+import StickerMarker from './components/StickerMarker'
+
 export default class ARWrapper extends Component {
 
   constructor() {
@@ -24,19 +26,6 @@ export default class ARWrapper extends Component {
       text : "Initializing AR..."
     };
 
-    ViroARTrackingTargets.createTargets({
-      "sevenTarget" : {
-        source : require('./res/uno.jpg'),
-        orientation : "Up",
-        physicalWidth : 0.05 // real world width in meters
-      },
-      "vansTarget": {
-        source : require('./res/vans.png'),
-        orientation : "Up",
-        physicalWidth : 0.07
-      }
-    });
-  
     ViroMaterials.createMaterials({
       sphereMaterial: {
         diffuseColor: '#FF0000',
@@ -46,37 +35,20 @@ export default class ARWrapper extends Component {
       }
     });
 
+    
+
     // bind 'this' to functions
     this._onInitialized = this._onInitialized.bind(this);
   }
 
+  componentWillMount() {
+    console.log(this.state.image)
+  }
+
   render() {
     return (
-      <ViroARScene onTrackingUpdated={this._onInitialized} >
-      <ViroARImageMarker target={"sevenTarget"} >
-        <ViroSphere
-          heightSegmentCount={20}
-          widthSegmentCount={20}
-          radius={.01}
-          position={[.02, 0, .01]}
-          materials={["sphereMaterial"]}
-          onClick={() => {
-            Alert.alert('7!');
-          }}
-        />
-      </ViroARImageMarker>
-      <ViroARImageMarker target={"vansTarget"} >
-        <ViroSphere
-          heightSegmentCount={20}
-          widthSegmentCount={20}
-          radius={.01}
-          position={[.02, 0, .01]}
-          materials={["sphereBlue"]}
-          onClick={() => {
-            Alert.alert('Vans!');
-          }}
-        />
-      </ViroARImageMarker>
+    <ViroARScene numberOfTrackedImages={5} onTrackingUpdated={this._onInitialized} >
+      <StickerMarker imgUri='https://raw.githubusercontent.com/stereolith/schticker/master/js/res/vans.png' width="0.07"></StickerMarker>
     </ViroARScene>
     );
   }

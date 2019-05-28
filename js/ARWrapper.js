@@ -2,14 +2,14 @@
 
 import React, { Component } from 'react';
 
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Alert} from 'react-native';
 
 import {
   ViroARScene,
   ViroText,
   ViroConstants,
   ViroARImageMarker,
-  ViroBox,
+  ViroSphere,
   ViroARTrackingTargets,
   ViroMaterials
 } from 'react-viro';
@@ -25,33 +25,25 @@ export default class ARWrapper extends Component {
     };
 
     ViroARTrackingTargets.createTargets({
-      "thierryTarget" : {
+      "sevenTarget" : {
         source : require('./res/uno.jpg'),
         orientation : "Up",
         physicalWidth : 0.05 // real world width in meters
       },
-    });
-
-    var styles = StyleSheet.create({
-      boldFont: {
-        color: '#FFFFFF',
-        flex: 1,
-        textAlignVertical: 'center',
-        textAlign: 'left',
-        fontWeight: 'bold',
-      },
+      "vansTarget": {
+        source : require('./res/vans.png'),
+        orientation : "Up",
+        physicalWidth : 0.07
+      }
     });
   
     ViroMaterials.createMaterials({
-      frontMaterial: {
+      sphereMaterial: {
         diffuseColor: '#FF0000',
       },
-      backMaterial: {
-        diffuseColor: '#FFFFFF',
-      },
-      sideMaterial: {
-        diffuseColor: '#0000FF',
-      },
+      sphereBlue: {
+        diffuseColor: '#4286f4'
+      }
     });
 
     // bind 'this' to functions
@@ -61,18 +53,29 @@ export default class ARWrapper extends Component {
   render() {
     return (
       <ViroARScene onTrackingUpdated={this._onInitialized} >
-      <ViroARImageMarker target={"thierryTarget"} >
-        <ViroText
-          fontSize={2}
-          style={styles.boldFont}
-          textLineBreakMode={"wordwrap"}
-          position={[.05, 0, 0]}
-          width={.1} height={.1}
-          extrusionDepth={.1}
-          rotation={[-90, 0, 0]}
-          materials={["frontMaterial", "backMaterial", "sideMaterial"]}
-          text="STIL VOR TALENT"
-         />
+      <ViroARImageMarker target={"sevenTarget"} >
+        <ViroSphere
+          heightSegmentCount={20}
+          widthSegmentCount={20}
+          radius={.01}
+          position={[.02, 0, .01]}
+          materials={["sphereMaterial"]}
+          onClick={() => {
+            Alert.alert('7!');
+          }}
+        />
+      </ViroARImageMarker>
+      <ViroARImageMarker target={"vansTarget"} >
+        <ViroSphere
+          heightSegmentCount={20}
+          widthSegmentCount={20}
+          radius={.01}
+          position={[.02, 0, .01]}
+          materials={["sphereBlue"]}
+          onClick={() => {
+            Alert.alert('Vans!');
+          }}
+        />
       </ViroARImageMarker>
     </ViroARScene>
     );

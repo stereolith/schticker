@@ -35,10 +35,6 @@ export default class ARWrapper extends Component {
       }
     });
 
-    
-
-    // bind 'this' to functions
-    this._onInitialized = this._onInitialized.bind(this);
   }
 
   componentWillMount() {
@@ -51,16 +47,6 @@ export default class ARWrapper extends Component {
       <StickerMarker imgUri='https://raw.githubusercontent.com/stereolith/schticker/master/js/res/vans.png' width="0.07"></StickerMarker>
     </ViroARScene>
     );
-  }
-
-  _onInitialized(state, reason) {
-    if (state == ViroConstants.TRACKING_NORMAL) {
-      this.setState({
-        text : "Hello World!"
-      });
-    } else if (state == ViroConstants.TRACKING_NONE) {
-      // Handle loss of tracking
-    }
   }
 }
 

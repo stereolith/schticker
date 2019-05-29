@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 
-import {StyleSheet, Alert} from 'react-native';
+import {StyleSheet} from 'react-native';
 
 import {
   ViroARImageMarker,
@@ -72,6 +72,4 @@ export default class StickerMarker extends Component {
       textAlign: 'center',  
     },
   });
-  
-  module.exports = StickerMarker;
-  
+    

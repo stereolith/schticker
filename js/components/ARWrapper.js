@@ -14,7 +14,7 @@ import {
   ViroMaterials
 } from 'react-viro';
 
-import StickerMarker from './components/StickerMarker'
+import StickerMarker from './StickerMarker'
 
 export default class ARWrapper extends Component {
 

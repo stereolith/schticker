@@ -11,7 +11,9 @@
     "@ant-design/react-native": "^3.1.8",
     "react": "16.8.3",
     "react-native": "0.59.3",
-    "react-viro": "2.14.0"
+    "react-redux": "^7.0.3",
+    "react-viro": "2.14.0",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

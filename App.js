@@ -7,9 +7,15 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import rootReducer from './js/redux/reducers'
 
 import DetectSticker from './js/views/DetectSticker'
+
+const store = createStore(rootReducer);
+
 
 // Sets the default scene you want for AR and VR
 
@@ -24,7 +30,9 @@ export default class ViroSample extends Component {
   // if you are building a specific type of experience.
   render() {
     return (
-      <DetectSticker></DetectSticker>
+      <Provider store={ store }>
+        <DetectSticker></DetectSticker>
+      </Provider>
     );
   }
 

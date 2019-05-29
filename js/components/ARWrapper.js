@@ -74,4 +74,9 @@ var styles = StyleSheet.create({
   },
 });
 
+const mapStateToProps = (state) => {
+  const { activeSticker } = state
+  return { activeSticker }
+};
+
 module.exports = ARWrapper;

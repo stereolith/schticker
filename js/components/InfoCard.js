@@ -21,8 +21,7 @@ export default class InfoCard extends Component {
             <Animated.View style={{...localStyles.cardWrapper, bottom: slideInAnim}} >
                 <Card style={localStyles.card} bordered={false} >
                     <Card.Header
-                        title="This is title"
-                        extra="this is extra"
+                        title={this.props.title}
                     />
                     <Card.Body>
                     <View style={{ height: 42 }}>
@@ -34,7 +33,6 @@ export default class InfoCard extends Component {
                         extra="footer extra content"
                     />
                 </Card>
-
             </Animated.View>
         )
     }

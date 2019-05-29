@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import { connect } from 'react-redux';
 
 import ARWrapper from '../components/ARWrapper'
 
@@ -9,7 +10,7 @@ import {
     ViroARSceneNavigator
   } from 'react-viro';
 
-export default class DetectSticker extends Component {
+class DetectSticker extends Component {
     constructor() {
         super()
 
@@ -23,15 +24,19 @@ export default class DetectSticker extends Component {
             <View style={localStyles.flex}>
                 <ViroARSceneNavigator apiKey='AAE05855-A301-4B82-9AE5-9DB1EEF4F23C'
                 initialScene={{scene: ARWrapper}} sryle={localStyles.arBg} />
-                <InfoCard />
+                {this._renderCard()}
             </View>
         )
     }
 
-    showCard() {
-        this.setState({
-            cardActive: true
-        })
+
+    _renderCard() {
+        if(this.props.activeSticker == "000") {
+            return(
+                <InfoCard title="Wa Da Da"/>
+            )
+
+        }
     }
 }
 
@@ -40,3 +45,10 @@ var localStyles = StyleSheet.create({
         flex: 1,
     }
 })
+
+const mapStateToProps = (state) => {
+    const { activeSticker } = state
+    return { activeSticker }
+};
+
+export default connect(mapStateToProps)(DetectSticker);

@@ -7,6 +7,12 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
+ //Startpunkt der App
+ //Compiler von React muss wissen, wo er anfängt (hier)
+
+
+ //Komponenten aus anderen Dateien und Libaries importieren mit 'import'
+ //Nicht nur ganze Dateien, sondern auch einzelne Funktionen
 import React, { Component } from 'react'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -27,6 +33,7 @@ export default class ViroSample extends Component {
   // if you are building a specific type of experience.
   render() {
     return (
+      //<> custom elements: React Elemente, die durch Compiler in HTML-Elemente übertragen werden
       <Provider store={ store }>
         <DetectSticker></DetectSticker>
       </Provider>

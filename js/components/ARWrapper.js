@@ -93,7 +93,13 @@ class ARWrapper extends Component {
   }
   
   render() {
+    //stickers = Array von allen Stickern, die es gibt
+    //.map() = Funktion, nur bei Array, für jedes Element wird gleiche Funktion, 
+    //die innerhalb der Klammern defniert wird ausgeführt
+
     const markers = this.props.stickers.map((sticker) => 
+    //imgUri = prop
+    //StickerMarker (Component) wird mit Attributen (props) initialisiert
       <StickerMarker imgUri={sticker.imageUrl} stickerID={sticker.id} width="0.07"></StickerMarker>
     )
     return (

@@ -14,6 +14,7 @@ class InfoCard extends Component {
     constructor() {
         super()
 
+        //state = Variablen, die eine Componente hat/JavaScript-Objekte
         this.state = {
             slideInAnim: new Animated.Value(-300)
         }

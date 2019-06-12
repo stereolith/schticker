@@ -10,6 +10,7 @@ import {
     ViroARSceneNavigator
   } from 'react-viro';
 
+//JavaScript-Klasse, ähnlich wie C++ Klasse
 class DetectSticker extends Component {
     constructor() {
         super()
@@ -20,6 +21,7 @@ class DetectSticker extends Component {
 
     }
 
+//    
     render() {
         return(
             <View style={localStyles.flex}>
@@ -30,9 +32,10 @@ class DetectSticker extends Component {
         )
     }
 
-
+//Soll Info-Karte für Sticker angezeigt werden?
     _renderCard() {
         console.log(this.props.activeSticker)
+        //wenn Sticker-Id nicht leer, zeige Karte an
         if(this.props.activeSticker != '') {
             return(
                 <InfoCard />

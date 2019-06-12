@@ -1,4 +1,4 @@
-const activeSticker = (state = "aaa", action) => {
+const activeSticker = (state = '', action) => {
     switch (action.type) {
       case 'SELECT_STICKER':
         return action.id

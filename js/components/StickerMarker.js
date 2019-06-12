@@ -51,7 +51,7 @@ class StickerMarker extends Component {
           position={[.02, 0, .01]}
           materials={["sphereMaterial"]}
           onClick={() => 
-            this.props.selectSticker("000")
+            this.props.selectSticker(this.props.stickerID)
           }
         />
       </ViroARImageMarker>

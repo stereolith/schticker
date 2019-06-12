@@ -16,9 +16,6 @@ import DetectSticker from './js/views/DetectSticker'
 
 const store = createStore(rootReducer);
 
-
-// Sets the default scene you want for AR and VR
-
 export default class ViroSample extends Component {
   constructor() {
     super();

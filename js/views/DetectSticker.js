@@ -17,6 +17,7 @@ class DetectSticker extends Component {
         this.state = {
             cardActive: false
         }
+
     }
 
     render() {
@@ -31,9 +32,10 @@ class DetectSticker extends Component {
 
 
     _renderCard() {
-        if(this.props.activeSticker == "000") {
+        console.log(this.props.activeSticker)
+        if(this.props.activeSticker != '') {
             return(
-                <InfoCard title="Wa Da Da"/>
+                <InfoCard />
             )
 
         }

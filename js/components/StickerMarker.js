@@ -20,7 +20,7 @@ class StickerMarker extends Component {
     super(props);
 
     ViroARTrackingTargets.createTargets({
-      "target": {
+      [this.props.stickerID]: {
         source : {uri: this.props.imgUri},
         orientation : "Up",
         physicalWidth : this.props.width
@@ -43,7 +43,7 @@ class StickerMarker extends Component {
 
   render() {
     return (
-      <ViroARImageMarker target={"target"} >
+      <ViroARImageMarker target={this.props.stickerID} >
         <ViroSphere
           heightSegmentCount={20}
           widthSegmentCount={20}
@@ -58,15 +58,6 @@ class StickerMarker extends Component {
     );
   }
 
-  _onInitialized(state, reason) {
-    if (state == ViroConstants.TRACKING_NORMAL) {
-      this.setState({
-        text : "Hello World!"
-      });
-    } else if (state == ViroConstants.TRACKING_NONE) {
-      // Handle loss of tracking
-    }
-  }
 }
 
 var styles = StyleSheet.create({

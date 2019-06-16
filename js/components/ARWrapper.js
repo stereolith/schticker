@@ -45,27 +45,6 @@ class ARWrapper extends Component {
   componentWillMount() {
     this.props.selectSticker('')
     this.props.addSticker(
-      'abc',
-      'BLAW BLAW BLAW',
-      '2019:05:22 09:12:54+02:00',
-      'Kim',
-      'https://raw.githubusercontent.com/stereolith/schticker/master/js/res/vans.png',
-      [
-        {
-            'lat': 50.946440,
-            'lon': 6.917723,
-            'added': '2019:04:06 10:42:57+02:00'
-        }
-      ],
-      {
-        'name': 'BLAW BLAW BLAW',
-        'links': {
-            'facebook': 'https://www.facebook.com/BLAW.CGN/'
-        }
-      },
-      'Street-Art Kollektiv aus Köln ohne nähere Angaben'
-    )
-    this.props.addSticker(
       'ccc',
       'Phase 10',
       '2019:05:22 09:12:54+02:00',
@@ -86,10 +65,27 @@ class ARWrapper extends Component {
       },
       'Spielkarte für das Spiel Phase10'
     )
-    setTimeout(() => {
-      console.log(this.props.activeStickerId)
-      console.log(this.props.stickers)
-    }, 1000)
+    this.props.addSticker(
+      'abc',
+      'BLAW BLAW BLAW',
+      '2019:05:22 09:12:54+02:00',
+      'Kim',
+      'https://raw.githubusercontent.com/stereolith/schticker/master/js/res/vans.png',
+      [
+        {
+            'lat': 50.946440,
+            'lon': 6.917723,
+            'added': '2019:04:06 10:42:57+02:00'
+        }
+      ],
+      {
+        'name': 'BLAW BLAW BLAW',
+        'links': {
+            'facebook': 'https://www.facebook.com/BLAW.CGN/'
+        }
+      },
+      'Street-Art Kollektiv aus Köln ohne nähere Angaben'
+    )
   }
   
   render() {
@@ -100,8 +96,9 @@ class ARWrapper extends Component {
     const markers = this.props.stickers.map((sticker) => 
     //imgUri = prop
     //StickerMarker (Component) wird mit Attributen (props) initialisiert
-      <StickerMarker imgUri={sticker.imageUrl} stickerID={sticker.id} width="0.07"></StickerMarker>
+      <StickerMarker key={sticker.id} imgUri={sticker.imageUrl} stickerID={sticker.id} width="0.1"></StickerMarker>
     )
+    console.log(markers)
     return (
       <ViroARScene numberOfTrackedImages={5} onTrackingUpdated={this._onInitialized} >
         { markers }

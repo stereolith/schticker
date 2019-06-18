@@ -1,0 +1,24 @@
+{
+    "name": "R.I.P. Stecken",
+    "added": "2019:05:25 12:18:54+02:00",
+    "addedBy": "Anna",
+    "location": [
+        {
+            "lat": 50.930839,
+            "lon": 6.935583,
+            "added": "2019:05:22 10:42:54+02:00"
+        },
+        {
+            "lat": 50.930901,
+            "lon": 6.935523,
+            "added": "2019:06:22 09:12:54+02:00"
+        }
+    ],
+    "author": {
+        "name": "unkown",
+        "links": {
+            "Facebook": "https://www.facebook.com/pages/Stecken/106478066081421",
+            "Website": "https://www.ksta.de/koeln/innenstadt/koelner-kult-club--stecken--szene-club-wird-ein-heizungskeller-2251162"
+        }
+    },
+    "description": "'Stecken' ist ein ehemaliger Underground-Club in Köln und wurde 2014 dauerhauft geschlossen. Der Club im Keller eines Wohnhauses zog mehr als 20 Jahre lang junge Menschen aus der ganzen Welt an. Heute befindet sich dort ein Heizungskeller."

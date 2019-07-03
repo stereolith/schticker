@@ -1,0 +1,24 @@
+
+        'abc',
+        'Späm x Reth1',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        'https://github.com/stereolith/schticker/blob/master/sticker-db/img8/img8.jpg',
+        [
+            {
+                'lat': 50.946440,
+                'lon': 6.917723,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'SpaemSpaem und Reth One',
+            'links': {
+                'facebook': 'https://www.facebook.com/pg/Reth.One.Art/posts/',
+                'website': 'https://www.flvcrew.com',
+                'website2': 'http://spaemspaem.de'
+                'instagram': 'https://www.instagram.com/reth.one/?hl=de'
+            }
+        },
+        'Reth One ist ein deutscher Streetartkünstler mit Schwerpunkt auf Stickern.'
+      )

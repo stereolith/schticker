@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import {StyleSheet, View, Text, Animated, Easing, TouchableWithoutFeedback } from 'react-native';
 
-import { Card } from '@ant-design/react-native';
+import { Card, Button } from '@ant-design/react-native';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { selectSticker, addSticker } from '../redux/actions';
+import { selectSticker, addSticker, setActiveView } from '../redux/actions';
 
 class InfoCard extends Component {
 
@@ -23,34 +23,35 @@ class InfoCard extends Component {
     }
 
     render() {
+        this.formatDate('2019:04:06 10:42:57+02:00')
         let { slideInAnim } = this.state;
 
         return(
             <Animated.View style={{...localStyles.cardWrapper, bottom: slideInAnim}}  >
             { this.state.visible ? 
                 <Card style={localStyles.card} bordered={false} >
-                    <TouchableWithoutFeedback onPress={() => { this.props.selectSticker('')} }>
-                        <Card.Header
-                            title={this.state.activeSticker.name}
-                            extra="X"
-                        />
-                    </TouchableWithoutFeedback>
                     <Card.Body style={{ marginLeft: 16 }}  >
-                        <View >
-                            <Text style={{ fontWeight: 'bold' }}> { this.state.activeSticker.author.name }</Text>
-                            <Text style={{ paddingTop: 20 }}> {this.state.activeSticker.description} </Text>
+                        <TouchableWithoutFeedback onPress={() => { this.props.selectSticker('')} }>
+                            <Text></Text>
+                        </TouchableWithoutFeedback>
+
+                        <View style={{flex: 1, alignContent: 'flex-start'}}>
+                            <Text style={{ fontWeight: 'bold', fontSize: 20, lineHeight: 28 }}>{ this.state.activeSticker.name }</Text>
+                            <Text style={{ color: 'rgba(0, 0, 0, 0.6)',paddingTop: 15, fontSize: 16, lineHeight: 22, fontWeight: 'bold' }}>{this.state.activeSticker.author.name} </Text>
+                            <Text style={{ fontSize: 16, lineHeight: 22, paddingTop: 5 }}>{this.state.activeSticker.description}</Text>
+                            <Text style={{ paddingTop: 20, fontWeight: 'bold',color: 'rgba(0, 0, 0, 0.6)' }}>Zuletzt gesehen: { this.formatDate(this.state.activeSticker.location[0].added) }</Text>
                         </View>
-                        <View style={{ position: 'absolute', bottom: 20 }} >
-                            <Text style={{ flex: 1 }}>
-                                <Text style={{ fontWeight: 'bold' }}>Zuletzt gesehen: </Text>
-                                <Text>{this.state.activeSticker.location[0].added}</Text>
-                            </Text>
+                        <View style={{position: 'absolute', bottom: 15}}>
+                            <Button
+                                type="primary"
+                                size="large"
+                                style={{backgroundColor: '#71E5E6', borderColor: '#71E5E6', color: '#000'}}
+                                activeStyle={{backgroundColor: '#71E5E6', color: '#000'}}
+                                onPress={() => this.props.setActiveView('StickerDetail') }
+                            >mehr Infos</Button>
                         </View>
                     </Card.Body>
-                    <Card.Footer
-                        content="footer content"
-                        extra="footer extra content"
-                    />
+
                 </Card> : null
             }
             </Animated.View>
@@ -72,6 +73,22 @@ class InfoCard extends Component {
             this.setState({ visible: nextProps.visible })
         })
     }
+
+    formatDate(dateStr) {
+        let parts = dateStr.slice(0, 10).split(':')
+        let date = new Date()
+        let oneDay = 24 * 60 * 60 * 1000
+        let currentTime = new Date().getTime()
+        date.setFullYear(parts[0])
+        date.setMonth(parts[1])
+        date.setDate(parts[2])
+        let diff = Math.round(Math.abs(currentTime - date.getTime()) / oneDay )
+        return 'vor ' + diff + ' Tagen'
+    } 
+
+    handleMoreClick() {
+        
+    }
 }
 
 var localStyles = StyleSheet.create({
@@ -81,7 +98,7 @@ var localStyles = StyleSheet.create({
         left:0,
         padding: 15,
         width: '100%',
-        height: 300,
+        height: 320,
 
     },
     card: {
@@ -95,7 +112,8 @@ var localStyles = StyleSheet.create({
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
       selectSticker,
-      addSticker
+      addSticker,
+      setActiveView
     }, dispatch)
   );
 const mapStateToProps = (state) => {

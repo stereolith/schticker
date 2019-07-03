@@ -43,49 +43,7 @@ class ARWrapper extends Component {
   }
 
   componentWillMount() {
-    this.props.selectSticker('')
-    this.props.addSticker(
-      'ccc',
-      'Phase 10',
-      '2019:05:22 09:12:54+02:00',
-      'Lukas',
-      'https://raw.githubusercontent.com/stereolith/schticker/master/js/res/uno.jpg',
-      [
-        {
-            'lat': 50.946440,
-            'lon': 6.917723,
-            'added': '2019:04:06 10:42:57+02:00'
-        }
-      ],
-      {
-        'name': 'Phase 10 Spielkarte',
-        'links': {
-            'facebook': 'https://www.facebook.com/BLAW.CGN/'
-        }
-      },
-      'Spielkarte für das Spiel Phase10'
-    )
-    this.props.addSticker(
-      'abc',
-      'BLAW BLAW BLAW',
-      '2019:05:22 09:12:54+02:00',
-      'Kim',
-      'https://raw.githubusercontent.com/stereolith/schticker/master/js/res/vans.png',
-      [
-        {
-            'lat': 50.946440,
-            'lon': 6.917723,
-            'added': '2019:04:06 10:42:57+02:00'
-        }
-      ],
-      {
-        'name': 'BLAW BLAW BLAW',
-        'links': {
-            'facebook': 'https://www.facebook.com/BLAW.CGN/'
-        }
-      },
-      'Street-Art Kollektiv aus Köln ohne nähere Angaben'
-    )
+    //this.props.selectSticker('')
   }
   
   render() {
@@ -98,7 +56,6 @@ class ARWrapper extends Component {
     //StickerMarker (Component) wird mit Attributen (props) initialisiert
       <StickerMarker key={sticker.id} imgUri={sticker.imageUrl} stickerID={sticker.id} width="0.1"></StickerMarker>
     )
-    console.log(markers)
     return (
       <ViroARScene numberOfTrackedImages={5} onTrackingUpdated={this._onInitialized} >
         { markers }

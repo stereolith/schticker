@@ -1,0 +1,23 @@
+
+        'abc',
+        'Radio Love Love',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        'https://github.com/stereolith/schticker/blob/master/sticker-db/img7/img7.jpg',
+        [
+            {
+                'lat': 50.946440,
+                'lon': 6.917723,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Razzy Bailey und Twit One',
+            'links': {
+                'facebook': 'https://www.facebook.com/RadioLoveLoveCGN/',
+                'website': 'http://ihateshirts.blogspot.com',
+                'soundcloud': 'https://soundcloud.com/radiolovelove'
+            }
+        },
+        'Umgesetzt von Twit One (kölner Musikproduzent und DJ), inspiriert von Razzy Baileys Song I hate hate von 1974. Läuft unter dem Label von Radio LoveLove'
+      )

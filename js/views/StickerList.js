@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, FlatList } from 'react-native';
+import { Text, ScrollView, StyleSheet, Image, View } from 'react-native';
+import { List } from '@ant-design/react-native';
+const Item = List.Item;
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { selectSticker } from '../redux/actions'
+import { selectSticker, setActiveView } from '../redux/actions'
 
 class StickerList extends Component {
     constructor() {
@@ -13,16 +15,35 @@ class StickerList extends Component {
 
 //    
     render() {
+        const stikersItems = this.props.stickers.map((sticker) => {
+          return (
+            <Item key={sticker.id} onPress={() => this.handleItemPress(sticker.id)}>
+              <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between',alignItems: 'center'}}>
+                <Image    
+                  style={{width: 70, height: 70}}
+                  source={{uri: sticker.imageUrl}}></Image>
+                <Text>{sticker.name}</Text>
+              </View>
+            </Item>
+          );
+        })
         return(
-            <View style={styles.container}>
-                <FlatList
-                    data={this.props.stickers}
-                    renderItem={
-                        ({sticker}) => <Text style={styles.listItem}>{sticker.name}</Text>
-                    }
-                />
-            </View>
+          <ScrollView
+          style={{ flex: 1, backgroundColor: '#f5f5f9' }}
+          automaticallyAdjustContentInsets={false}
+          showsHorizontalScrollIndicator={false}
+          showsVerticalScrollIndicator={false}
+        >
+          <List renderHeader={'Alle Sticker'}>
+            {stikersItems}
+          </List>
+        </ScrollView>
         )
+    }
+
+    handleItemPress(stickerId) {
+      this.props.selectSticker(stickerId)
+      this.props.setActiveView('StickerDetail')
     }
 }
 
@@ -38,16 +59,15 @@ const styles = StyleSheet.create({
     },
   })
 
-const mapDispatchToProps = dispatch => {
-    return {
-      selectSticker: (id) => {
-        dispatch(selectSticker(id))
-      }
-    }
-  }
+  const mapDispatchToProps = dispatch => (
+    bindActionCreators({
+      selectSticker,
+      setActiveView
+    }, dispatch)
+  );
 const mapStateToProps = (state) => {
     const { stickers } = state
     return { stickers }
 };
 
-export default connect(mapStateToProps)(StickerList);
+export default connect(mapStateToProps, mapDispatchToProps)(StickerList);

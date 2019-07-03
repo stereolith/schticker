@@ -26,7 +26,7 @@ class DetectSticker extends Component {
         return(
             <View style={localStyles.flex}>
                 <ViroARSceneNavigator apiKey='AAE05855-A301-4B82-9AE5-9DB1EEF4F23C'
-                initialScene={{scene: ARWrapper}} sryle={localStyles.arBg} />
+                initialScene={{scene: ARWrapper}} style={localStyles.arBg} />
                 {this._renderCard()}
             </View>
         )

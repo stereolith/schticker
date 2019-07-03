@@ -17,9 +17,8 @@
  import { createStore } from 'redux'
  import { Provider } from 'react-redux'
  import rootReducer from './js/redux/reducers'
- 
- import DetectSticker from './js/views/DetectSticker'
- import StickerList from './js/views/StickerList'
+
+ import NavWraper from './js/components/NavWrapper'
  
  const store = createStore(rootReducer);
  
@@ -36,7 +35,7 @@
      return (
        //<> custom elements: React Elemente, die durch Compiler in HTML-Elemente übertragen werden
        <Provider store={ store }>
-         <DetectSticker></DetectSticker>
+         <NavWraper></NavWraper>
        </Provider>
      );
    }

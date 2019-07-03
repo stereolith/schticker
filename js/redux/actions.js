@@ -1,11 +1,13 @@
+const uuidv1 = require('uuid/v1');
+
 export const selectSticker = id => ({
     type: 'SELECT_STICKER',
     id: id
 })
 
-export const addSticker = (id, name, added, addedBy, imageUrl, location, author, description) => ({
+export const addSticker = (name, added, addedBy, imageUrl, location, author, description) => ({
     type: 'ADD_STICKER',
-    id: id,
+    id: uuidv1(),
     name: name,
     added: added,
     addedBy: addedBy,

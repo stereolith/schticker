@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet, Image, View } from 'react-native';
+import { Linking, Text, ScrollView, StyleSheet, Image, View } from 'react-native';
 import { Button } from '@ant-design/react-native';
 import MapView from 'react-native-maps';
 
@@ -34,9 +34,7 @@ class StickerDetail extends Component {
             <View style={localStyles.section}>
               <Text style={{fontSize: 22, fontWeight: 'bold', paddingBottom: 5}}>Dieser Schticker im Netz</Text>
               <View style={{flex:1, flexDirection: 'row', flexGrow: 1}}>
-                 <Button style={{flexGrow:1}}>Facebook</Button>
-                 <Button style={{flexGrow:1}}>Facebook</Button>
-                 <Button style={{flexGrow:1}}>Facebook</Button>
+                 {this.linkList()}
               </View>
             </View>
             <View style={localStyles.section}>
@@ -44,6 +42,19 @@ class StickerDetail extends Component {
             </View>
           </ScrollView>
         )
+    }
+
+    linkList() {
+      let links = this.props.activeSticker.author.links
+      if (links) {
+        return Object.keys(this.props.activeSticker.author.links).map((key) => (
+          <Button
+            style={{flexGrow:1, textTransform: 'capitalize'}}
+            onPress={() => Linking.openURL(links[key])}
+          >{key}</Button>
+        ))
+      }
+      return 
     }
 }
 

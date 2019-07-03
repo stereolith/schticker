@@ -1,0 +1,22 @@
+
+        'abc',
+        'Trash Tristan Tattoo',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        'https://github.com/stereolith/schticker/blob/master/sticker-db/img5/img5.jpg',
+        [
+            {
+                'lat': 50.946440,
+                'lon': 6.917723,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Tristan Baumer',
+            'links': {
+                'instagram': 'https://www.instagram.com/trashtristantattoo/?hl=de',
+                'website': 'https://www.sukitattoo-cologne.com/tätowierer-tristan-galerie/'
+            }
+        },
+        'Tristan Baumer ist ein Tätowierer des Tattoostudios Sukitattoo-cologne. Er arbeitet in den Bereichen Blackwork, Oldschool und Contemporary.'
+      )

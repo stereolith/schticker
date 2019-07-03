@@ -1,0 +1,23 @@
+
+        'abc',
+        'Je suis partout',
+        '019:05:25 12:18:54+02:00',
+        'Anna',
+        'https://github.com/stereolith/schticker/blob/master/sticker-db/img1/img1.jpg',
+        [
+            {
+                'lat': 50.946440,
+                'lon': 6.917723,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Thierry Jaspart',
+            'links': {
+                'facebook': 'facebook": "https://www.facebook.com/thierryjaspartofficial/',
+                'website':'http://thierry-jaspart.com/?fbclid=IwAR3S7y0tEvmGdFJZQdBB_HOqNRKS5DifKo9NcUiYsw3-_Dt9DkxEBOeV2to',
+                'twitter': 'https://twitter.com/andalltha?lang=de'
+            }
+        },
+        'Streetart Projekt namens 'Andalltha' vom belgischen Künstler Thierry Jaspart,'Je suis partout' gehört zur Stickerreihe j'esxiste'
+      )

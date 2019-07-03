@@ -1,0 +1,25 @@
+{
+    "name": "Radio Love Love",
+    "added": "2019:05:25 12:18:54+02:00",
+    "addedBy": "Anna",
+    "location": [
+        {
+            "lat": 50.930839,
+            "lon": 6.935583,
+            "added": "2019:05:22 10:42:54+02:00"
+        },
+        {
+            "lat": 50.930901,
+            "lon": 6.935523,
+            "added": "2019:06:22 09:12:54+02:00"
+        }
+    ],
+    "author": {
+        "name": "Razzy Bailey und Twit One",
+        "links": {
+            "Facebook": "https://www.facebook.com/RadioLoveLoveCGN/",
+            "Website": "http://ihateshirts.blogspot.com",
+            "Soundcloud": "https://soundcloud.com/radiolovelove"
+        }
+    },
+    "description": " Umgesetzt von Twit One (kölner Musikproduzent und DJ), inspiriert von Razzy Baileys Song 'I hate hate' von 1974. Läuft unter dem Label von 'Radio LoveLove'"

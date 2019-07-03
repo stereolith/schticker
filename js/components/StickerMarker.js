@@ -5,7 +5,7 @@ import {StyleSheet} from 'react-native';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { selectSticker } from '../redux/actions'
+import { selectSticker, setActiveView } from '../redux/actions'
 
 import {
   ViroARImageMarker,
@@ -70,13 +70,12 @@ var styles = StyleSheet.create({
   },
 });
   
-const mapDispatchToProps = dispatch => {
-  return {
-    selectSticker: (id) => {
-      dispatch(selectSticker(id))
-    }
-  }
-}
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({
+    selectSticker,
+    setActiveView
+  }, dispatch)
+);
 
 const mapStateToProps = (state) => {
   const { activeSticker } = state

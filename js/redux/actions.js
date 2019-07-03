@@ -15,3 +15,13 @@ export const addSticker = (id, name, added, addedBy, imageUrl, location, author,
     description: description
 })
 
+export const setSidebar = sidebarActive => ({
+    type: 'SET_SIDEBAR',
+    sidebarActive: sidebarActive
+})
+
+export const setActiveView = activeView => ({
+    type: 'SET_ACTIVE_VIEW',
+    activeView: activeView
+})
+

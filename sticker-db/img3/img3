@@ -1,0 +1,21 @@
+
+        'abc',
+        'PilzWald',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        'https://github.com/stereolith/schticker/blob/master/sticker-db/img3/img3.jpg',
+        [
+            {
+                'lat': 50.946440,
+                'lon': 6.917723,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Paul&Alex',
+            'links': {
+                'website': 'https://www.pilzwald.de' 
+            }
+        },
+        'StartUp: DIY Tutorials, um selber eigene Speisepilze im eigenen Haus oder Garten anzubauen; Speisepilzzucht in der Stadt'
+      )

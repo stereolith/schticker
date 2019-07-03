@@ -1,0 +1,21 @@
+
+        'abc',
+        'fckng done.',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        'https://github.com/stereolith/schticker/blob/master/sticker-db/img5/img5.jpg',
+        [
+            {
+                'lat': 50.946440,
+                'lon': 6.917723,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'fckng done official',
+            'links': {
+                'instagram': 'https://www.instagram.com/fckngdone.official/' 
+            }
+        },
+        'Dieser Sticker steht symbolisch für die Bewältigung und das Abschließen mit etwas Großem, was einen über längere Zeit beschäftigt hat. Somit sind diese Aufkleber eine Aussage der Erleichterung.'
+      )

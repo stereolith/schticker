@@ -1,0 +1,21 @@
+
+        'abc',
+        '#Duckel',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        'https://github.com/stereolith/schticker/blob/master/sticker-db/img2/img2.jpg',
+        [
+            {
+                'lat': 50.946440,
+                'lon': 6.917723,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Duckel Projek',
+            'links': {
+                'instagram': 'https://www.instagram.com/street.duckel/' 
+            }
+        },
+        'Der Künstler ist unbekannt, Sticker gehört zum Duckel Projekt, Instagram: @street.duckel'
+      )

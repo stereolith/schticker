@@ -1,0 +1,22 @@
+(
+        'abc',
+        'The Hemp Project',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/hempproject/hempproject.jpg',
+        [
+            {
+                'lat': 50.5535718,
+                'lon': 6.5556952,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'The Hemp Project Collective',
+            'links': {
+		'website': 'http://studio-hustle.com/the-hemp-project.html',
+            	'instagram': 'https://www.instagram.com/thehempprojectcollective'
+            }
+        },
+        'The Hemp Project ist ein Freundeskollektiv mit dem Ziel, das Denken über Hanf zu verändern und die Pflanze als nachhaltige Alternative zu promoten, die Nahrung, Kleidung, Obdach, Energie und vieles mehr bietet.'
+      )

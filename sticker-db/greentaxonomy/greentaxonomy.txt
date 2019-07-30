@@ -1,0 +1,22 @@
+(
+        'abc',
+        'GREENTAXONOMY',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/greentaxonomy/greentaxonomy.jpg',
+        [
+            {
+                'lat': 50.952656,
+                'lon': 6.912594,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'GREENTAXONOMY Street Art',
+            'links': {
+		'twitter': 'https://twitter.com/greentaxonomy0',
+            	'instagram': 'https://www.instagram.com/greentaxonomy/'
+            }
+        },
+        'Die Werke von GREENTAXONOMY sind ein Mashup von Organismen und behandeln die Absurdität der Klassifikation und Theorie der Taxonomie.'
+      )

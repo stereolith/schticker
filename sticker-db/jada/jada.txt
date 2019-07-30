@@ -1,0 +1,21 @@
+(
+        'abc',
+        'Ja! Da!',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/jada/jada.jpg',
+        [
+            {
+                'lat': 50.5530888,
+                'lon': 6.554941,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Ja! Da! Streetart',
+            'links': {
+            	'instagram': 'https://www.instagram.com/jada_streetart/'
+            }
+        },
+        'Streetart-Künstler aus Köln. Hauptsächlich größere Paste-ups mit Figuren aus Comics oder Zeichentrick und Sprechblasen.'
+      )

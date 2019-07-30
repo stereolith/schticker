@@ -1,0 +1,21 @@
+(
+        'abc',
+        'Pusher Tony',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/pushertony/pushertony.jpg',
+        [
+            {
+                'lat': 50.554611,
+                'lon': 6.5611622,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Pusher Thony',
+            'links': {
+		'instagram': 'https://www.instagram.com/pushertony'
+            }
+        },
+        'Tattoo-Künstler aus Köln. Pusher Tony kombiniert kultige Motive der 1980er Popkultur mit antiken Kunstmotiven.'
+      )

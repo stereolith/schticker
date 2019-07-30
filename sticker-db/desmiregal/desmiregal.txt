@@ -1,0 +1,22 @@
+(
+        'abc',
+        'Desmiregal',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/desmiregal/desmiregal.jpg',
+        [
+            {
+                'lat': 50.948232,
+                'lon': 6.954733,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Tuk Streetart',
+            'links': {
+                'facebook': 'https://www.facebook.com/TukArts/',
+		'website': 'https://www.instagram.com/tuk_streetart'
+            }
+        },
+        'Straßenkünstler aus Köln mit Fokus auf Schablonen und ortsspezifische Paste-Ups (weltweit). "Cross roads. Cross borders. Cross minds." Dieser Sticker ist eine Parodie des Modelabels Desigual.'
+      )

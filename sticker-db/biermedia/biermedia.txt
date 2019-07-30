@@ -1,0 +1,22 @@
+(
+        'abc',
+        'Biermedia',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/biermedia/biermedia.jpg',
+        [
+            {
+                'lat': 50.5551528,
+                'lon': 6.5627168,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Fachschaft Intermedia',
+            'links': {
+                'facebook': 'https://www.facebook.com/intermedia.uni.koeln/',
+		'website': 'https://fachschaft-intermedia.de'
+            }
+        },
+        'Party-Reihe der Fachschaft des Studiengangs Intermedia der Universität zu Köln.'
+      )

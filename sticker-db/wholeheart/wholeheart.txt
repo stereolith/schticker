@@ -1,0 +1,22 @@
+(
+        'abc',
+        'Whole Heart',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/wholeheart/wholeheart.jpg',
+        [
+            {
+                'lat': 50.5534908,
+                'lon': 6.5556382,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'wHOLE heART',
+            'links': {
+		'facebook': 'https://www.facebook.com/HoleStreetart/',
+            	'instagram': 'https://www.instagram.com/wholeheart74'
+            }
+        },
+        'Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen.'
+      )

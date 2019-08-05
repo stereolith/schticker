@@ -1,0 +1,20 @@
+(
+        'abc',
+        'BLAW BLAW BLAW',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/blawblawblaw/blawblawblaw.jpg',
+        [
+            {
+                'lat': 50.946440,
+            	'lon': 6.917723,
+            	'added': "2019:04:06 10:42:57+02:00"
+            }
+        ],
+        {
+            'name': 'BLAW BLAW BLAW',
+            'links': {
+                'facebook': 'https://www.facebook.com/BLAW.CGN/'
+        },
+        'Street-Art Kollektiv aus Köln ohne nähere Angaben.'
+      )

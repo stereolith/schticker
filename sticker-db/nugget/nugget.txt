@@ -1,0 +1,23 @@
+(
+        'abc',
+        'I am not a nugget',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/nugget/nugget.jpg',
+        [
+            {
+                'lat': 50.5521072,
+                'lon': 6.5520832,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'PETA (ZWEI)',
+            'links': {
+            	'website': 'https://www.petazwei.de',
+		'facebook': 'https://www.facebook.com/petazwei/',
+		'instagram': 'https://www.instagram.com/petazwei/'
+            }
+        },
+        'Sticker gegen den Konsum von Hühnerküken in Form von Chicken-Nuggets. Von der Tierschutz-Organisation PETA bzw. PETA ZWEI, der Jugendorganisation von PETA.'
+      )

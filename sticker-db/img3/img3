@@ -6,8 +6,8 @@
         'https://github.com/stereolith/schticker/blob/master/sticker-db/img3/img3.jpg',
         [
             {
-                'lat': 50.946440,
-                'lon': 6.917723,
+                'lat': 50.936965,
+                'lon': 6.932702,
                 'added': '2019:05:22 10:42:54+02:00'
             }
         ],

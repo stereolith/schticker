@@ -1,0 +1,22 @@
+(
+        'abc',
+        'Say yes to hummus',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/hummus/hummus.jpg',
+        [
+            {
+                'lat': 50.5522722,
+                'lon': 6.5527768,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Mashery Hummus Kitchen',
+            'links': {
+		'facebook': 'https://www.facebook.com/masheryhummus/'
+            	'website': 'http://www.mashery-hummus.de'
+            }
+        },
+        'Vegetarisches Restaurant im Kölner Kwartier Latäng, die Hummus als Hauptgerichtin verschiednen Varianten anbieten.'
+      )

@@ -1,0 +1,22 @@
+(
+        'abc',
+        'Hippie Trim',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/hippietrim/hippietrim.jpg',
+        [
+            {
+                'lat': 50.553858,
+                'lon': 6.561812,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Hippie Trim Band',
+            'links': {
+		'facebook': 'https://www.facebook.com/hippietrim/',
+            	'website': 'http://www.hippietrim.com'
+            }
+        },
+        'Melodic Hardcore-Band aus dem Rheinland/Ruhrgebiet. Stilistisch bewegt sich die Formation zwischen Punk Rock, Hardcore, Shoegaze und Pop. Label: Redfield Records.'
+      )

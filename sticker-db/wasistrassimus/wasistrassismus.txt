@@ -1,0 +1,22 @@
+(
+        'abc',
+        'Was ist Rassismus?',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        'https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/wasistrassismus/wasistrassismus.jpg',
+        [
+            {
+            "lat": 50.55291,
+            "lon": 6.5530108,
+            "added": "2019:05:22 10:42:54+02:00"
+            }
+        ],
+        {
+            'name': 'Was ist Rassismus e.V.',
+            'links': {
+                'website': 'http://www.was-ist-rassismus.de',
+		'twitter': 'https://twitter.com/wasistrassismus'
+            }
+        },
+        'Ein Online-Portal zum Umgang mit Rassismus, das für das Thema sensibilisieren, darüber informieren und zum Handeln anregen möchte. Das Portal öffnet den Blick auf Rassismus als gesellschaftliche Machtstruktur, welche Menschen in ihrem ganz alltäglichen Leben leitet, privilegiert oder benachteiligt.'
+      )

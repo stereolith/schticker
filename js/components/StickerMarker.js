@@ -11,7 +11,10 @@ import {
   ViroARImageMarker,
   ViroSphere,
   ViroARTrackingTargets,
-  ViroMaterials
+  ViroMaterials,
+  Viro3DObject,
+  ViroAmbientLight,
+  ViroAnimations
 } from 'react-viro'; 
 
 class StickerMarker extends Component {
@@ -35,6 +38,17 @@ class StickerMarker extends Component {
         diffuseColor: '#4286f4'
       }
     });
+
+    ViroAnimations.registerAnimations({
+      animateBall: {
+        properties: {
+          opacity: 1
+        },
+        easing:"EaseIn", 
+        duration: 1000,
+        delay: 10000
+      }
+    });
   }
 
   componentDidMount() {
@@ -44,16 +58,21 @@ class StickerMarker extends Component {
   render() {
     return (
       <ViroARImageMarker target={this.props.stickerID} >
-        <ViroSphere
-          heightSegmentCount={20}
-          widthSegmentCount={20}
-          radius={.01}
-          position={[.02, 0, .01]}
-          materials={["sphereMaterial"]}
-          onClick={() => 
-            this.props.selectSticker(this.props.stickerID)
-          }
-        />
+        <ViroAmbientLight color="#FFFFFF" />
+        <Viro3DObject source={require('../res/sphere.vrx')}
+              position={[.02, 0, .01]}
+              scale={[0.01, 0.01, 0.01]}
+              opacity={0.7}
+              animation={{name: 'Take 001',
+                      run:true,
+                      loop:true
+                    }}
+              type="VRX"
+              onClick={() => 
+                this.props.selectSticker(this.props.stickerID)
+              }  
+            />
+              
       </ViroARImageMarker>
     );
   }

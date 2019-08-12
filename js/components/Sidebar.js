@@ -13,8 +13,10 @@ class Sidebar extends Component {
       super()
       this.state = {
         menuItems : [
-          {title: 'Schticker Scannen', element: 'DetectSticker'},
-          {title: 'Schticker Liste', element: 'StickerList'}
+          {title: 'Schticker Scannen', element: 'DetectSticker', icon: require('../res/icons/photo-camera.png')},
+          {title: 'Schticker Liste', element: 'StickerList', icon: require('../res/icons/menu.png')},
+          {title: 'Schticker Hinzufügen', element: 'AddSticker', icon: require('../res/icons/add.png')}
+
         ]
       }
 
@@ -26,7 +28,8 @@ class Sidebar extends Component {
               <View style={{height: 160, flexDirection: 'column',alignItems: 'center', borderStyle: 'solid',borderBottomWidth: 1, borderBottomColor: '#71E5E6'}}>
                 <Image    
                   style={{height: 120, width: 160, marginTop: 25}}
-                  source={require('../res/logo.png')}>
+                  source={require('../res/logo.png')}
+                  >
                 </Image>
               </View>
               {this.menuItems()}
@@ -50,9 +53,16 @@ class Sidebar extends Component {
       return this.state.menuItems.map((item) => (
         <TouchableHighlight
           onPress={() => {this.handleLinkPress(item.element)}}
-          style={{flexGrow: 0, flexDirection: 'column'}}>
-          <View style={{marginVertical: 20, marginHorizontal: 15}}>
-            <Text style={{fontSize: 18}}>{item.title}</Text>
+          style={{flexGrow: 0, flexDirection: 'column'}}
+          underlayColor={'#BBB'}
+          >
+          <View style={{marginVertical: 30, marginHorizontal: 15, flex:1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
+            <Image    
+              style={{height: 30, width: 30, marginRight: 15, color: '#000'}}
+              source={item.icon}
+              >
+            </Image>
+            <Text style={{fontSize: 18, lineHeight: 20, height: 20}}>{item.title}</Text>
           </View>
         </TouchableHighlight>
       ))

@@ -1,18 +1,17 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { View, TouchableWithoutFeedback } from 'react-native';
+import { View, TouchableWithoutFeedback, Image } from 'react-native';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { selectSticker, addSticker, setSidebar } from '../redux/actions';
 
-import Sidebar from './Sidebar'
-import DetectSticker from '../views/DetectSticker'
-import StickerList from '../views/StickerList'
-import StickerDetail from '../views/StickerDetail'
-
-import Icon from 'react-native-vector-icons/Feather';
+import Sidebar from './Sidebar';
+import DetectSticker from '../views/DetectSticker';
+import StickerList from '../views/StickerList';
+import StickerDetail from '../views/StickerDetail';
+import AddStickerView from '../views/AddSticker';
 
 class NavWrapper extends Component {
 
@@ -245,9 +244,13 @@ class NavWrapper extends Component {
             <Sidebar>
                 <View style={{flex:1}}>
                     {this.__getActiveView()}
-                    <TouchableWithoutFeedback onPress={() => {this.props.setSidebar(true); console.log('setSidebar true')}}>
+                    <TouchableWithoutFeedback onPress={() => {this.props.setSidebar(true)}}>
                         <View
-                            style={{flex: 1, position:'absolute', backgroundColor: '#555', top: 30, left: 20, height: 40, width: 40,borderRadius: 40}}>
+                            style={{flex: 1, position:'absolute', backgroundColor: '#71E5E6', top: 30, left: 20, height: 40, width: 40,borderRadius: 40, flex:1, alignContent: 'center', justifyContent: 'center'}}>
+                            <Image    
+                                style={{height: 20, width: 20, alignSelf: 'center'}}
+                                resizeMode="contain"
+                                source={require('../res/icons/menu.png')}></Image>
                         </View>
 
                     </TouchableWithoutFeedback>
@@ -266,6 +269,8 @@ class NavWrapper extends Component {
                 return <StickerList></StickerList>
             case 'StickerDetail':
                 return <StickerDetail></StickerDetail>
+            case 'AddSticker':
+                return <AddStickerView></AddStickerView>
             default:
                 return null
         }

@@ -46,12 +46,33 @@ class StickerDetail extends Component {
 
     linkList() {
       let links = this.props.activeSticker.author.links
+      let icons = {
+        facebook: require('../res/icons/facebook.png'),
+        instagram: require('../res/icons/instagram.png'),
+        twitter: require('../res/icons/twitter.png'),
+        website: require('../res/icons/globe.png')
+      }
       if (links) {
         return Object.keys(this.props.activeSticker.author.links).map((key) => (
           <Button
-            style={{flexGrow:1, textTransform: 'capitalize'}}
+            style={{
+              flexGrow:1,
+              paddingVertical: 5,
+              textTransform: 'capitalize',
+              flex: 1,
+              flexDirection: 'row',
+              alignItems: 'center',
+              paddingTop: 10
+            }}
             onPress={() => Linking.openURL(links[key])}
-          >{key}</Button>
+          >
+            <Image    
+              style={{height: 25, width: 25, marginRight: 15, color: '#000'}}
+              source={icons[key]}
+              resizeMode="contain"
+              >
+            </Image>
+          </Button>
         ))
       }
       return 

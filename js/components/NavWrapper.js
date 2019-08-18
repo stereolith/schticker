@@ -20,6 +20,9 @@ class NavWrapper extends Component {
     }
 
     componentWillMount() {
+
+        if(this.props.stickers.length > 0) return;
+
         const stickerDb = [
             [
                 'Je suis partout',
@@ -235,7 +238,7 @@ class NavWrapper extends Component {
 
         this.props.selectSticker('')
         stickerDb.forEach((sticker) => {
-            this.props.addSticker(...sticker)
+            this.props.addSticker(...sticker)   
         })
     }
   

@@ -16,12 +16,12 @@
  import React, { Component } from 'react'
  import { createStore } from 'redux'
  import { Provider } from 'react-redux'
+ import { PersistGate } from 'redux-persist/integration/react';
+ import { store, persistor } from './js/redux/store';
  import rootReducer from './js/redux/reducers'
 
  import NavWraper from './js/components/NavWrapper'
- 
- const store = createStore(rootReducer);
- 
+  
  export default class ViroSample extends Component {
    constructor() {
      super();
@@ -35,7 +35,9 @@
      return (
        //<> custom elements: React Elemente, die durch Compiler in HTML-Elemente übertragen werden
        <Provider store={ store }>
-         <NavWraper></NavWraper>
+          <PersistGate loading={null} persistor={persistor}>
+            <NavWraper></NavWraper>
+          </PersistGate>
        </Provider>
      );
    }

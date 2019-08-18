@@ -9,9 +9,12 @@ import {
   TextInput
 } from "react-native";
 import { Button } from "@ant-design/react-native";
-import ImagePicker from "react-native-image-picker";
 
 import { connect } from "react-redux";
+import { bindActionCreators } from 'redux';
+
+import { addSticker, selectSticker, setActiveView } from '../redux/actions';
+
 
 class AddStickerView extends Component {
   constructor() {
@@ -24,8 +27,16 @@ class AddStickerView extends Component {
         username: "",
         description: "",
         addedDate: "",
-        location: {}
-      }
+        location: {},
+        author: {
+          name: '',
+          facebook: '',
+          instagram: '',
+          twitter: '',
+          website: ''
+        }
+      },
+      activeLinks: []
     };
   }
 
@@ -59,12 +70,10 @@ class AddStickerView extends Component {
   hadleNextPress() {
     switch (this.state.activeStep) {
       case "CAMERA":
-        this.setState({ activeStep: "CROP" });
-        break;
-      case "CROP":
         this.setState({ activeStep: "INFO" });
         break;
       case "INFO":
+        this.addSticker();
         this.setState({ activeStep: "SUCCESS" });
         break;
       default:
@@ -74,18 +83,15 @@ class AddStickerView extends Component {
 
   handleBackPress() {
     switch (this.state.activeStep) {
-      case "CROP":
-        this.setState({ activeStep: "CAMERA" });
-        break;
       case "INFO":
-        this.setState({ activeStep: "CROP" });
+        this.setState({ activeStep: "CAMERA" });
         break;
       default:
         return;
     }
   }
 
-  showImagePicker() {
+  /*showImagePicker() {
     const options = {
       title: "Select Avatar",
       customButtons: [{ name: "fb", title: "Choose Photo from Facebook" }],
@@ -117,7 +123,7 @@ class AddStickerView extends Component {
         });
       }
     });
-  }
+  }*/
 
   getStep() {
     switch (this.state.activeStep) {
@@ -134,7 +140,6 @@ class AddStickerView extends Component {
                 alignItems: "center",
                 paddingTop: 10
               }}
-              onPress={this.showImagePicker.bind(this)}
             >
               Foto hinzufügen
             </Button>
@@ -144,12 +149,9 @@ class AddStickerView extends Component {
             />
           </View>
         );
-      case "CROP":
-        return (
-          <View style={{ width: "100%", flex: 1, ...localStyles.section }} />
-        );
       case "INFO":
         return (
+          <View>
           <View style={{ width: "100%", flex: 1, ...localStyles.section }}>
             <Text
               style={{
@@ -161,33 +163,90 @@ class AddStickerView extends Component {
             >
               Infos hinzufügen
             </Text>
-            <View
-              seyle={{
-                flex: 1,
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-            >
+            <View>
               <Text style={{ flexGrow: 1 }}>Name: </Text>
               <TextInput
-                style={{
-                  flexGrow: 2,
-                  height: 40,
-                  borderColor: "gray",
-                  backgroundColor: "#FFF",
-                  borderWidth: 1
-                }}
+                style={localStyles.textIn}
                 value={this.state.stickerInfo.name}
-                onChangeText={stickerInfo =>
-                  this.setState({ stickerInfo: { name: stickerInfo } })
-                }
+                onChangeText={val => {
+                  var info = this.state.stickerInfo
+                  info.name = val
+                  this.setState({ stickerInfo: info })
+                }}
+              />
+            </View>
+            <View>
+              <Text style={{ flexGrow: 1 }}>Beschreibung: </Text>
+              <TextInput
+                style={localStyles.textIn}
+                value={this.state.stickerInfo.description}
+                onChangeText={val => {
+                  var info = this.state.stickerInfo
+                  info.description = val
+                  this.setState({ stickerInfo: info })
+                }}
+              />
+            </View>
+            <View>
+              <Text style={{ flexGrow: 1 }}>Posten als (username): </Text>
+              <TextInput
+                style={localStyles.textIn}
+                value={this.state.stickerInfo.username}
+                onChangeText={val => {
+                  var info = this.state.stickerInfo
+                  info.username = val
+                  this.setState({ stickerInfo: info })
+                }}
               />
             </View>
           </View>
+          <View style={{ width: "100%", flex: 1, ...localStyles.section }}>
+          <Text
+            style={{
+              fontSize: 22,
+              fontWeight: "bold",
+              paddingBottom: 5,
+              paddingTop: 10
+            }}
+          >
+            Über den Autor
+          </Text>
+          <View>
+            <Text style={{ flexGrow: 1 }}>Name: </Text>
+            <TextInput
+              style={localStyles.textIn}
+              value={this.state.stickerInfo.author.name}
+              onChangeText={val => {
+                var info = this.state.stickerInfo
+                info.author.name = val
+                this.setState({ stickerInfo: info })
+              }}
+            />
+          </View>
+          {this.getLinkIn('website')}
+          {this.getLinkIn('facebook')}
+          {this.getLinkIn('instagram')}
+          {this.getLinkIn('twitter')}
+          
+        </View>
+        </View>
         );
       case "SUCCESS":
-        return <View />;
+        return <View>
+              <Text
+              style={{
+                fontSize: 22,
+                fontWeight: "bold",
+                paddingBottom: 5,
+                paddingTop: 65
+              }}
+            >
+              Der Schticker wurde erfolgreich hinzugefügt.
+            </Text>
+            <Button style={localStyles.addLink} onPress={this.toDetail.bind(this)} >
+              Zur Schticker-Detail-Seite
+            </Button>
+          </View>;
     }
   }
 
@@ -208,6 +267,75 @@ class AddStickerView extends Component {
       );
     }
   }
+
+  addSticker() {
+    var date = this.getCurrentDateString()
+    console.log(this.state.stickerInfo)
+    this.props.addSticker(
+      this.state.stickerInfo.name, 
+      this.getCurrentDateString,
+      this.state.stickerInfo.username,
+      this.state.stickerInfo.image,
+      [this.state.stickerInfo.location],
+      {
+        name: this.state.stickerInfo.author.name,
+        links: {
+          facebook: this.state.stickerInfo.author.facebook,
+          instagram: this.state.stickerInfo.author.instagram,
+          twitter: this.state.stickerInfo.author.twitter,
+          website: this.state.stickerInfo.author.website
+        }
+      },
+      this.state.stickerInfo.description
+    )
+  }
+
+  getCurrentDateString() {
+    var date = new Date().getDate(); //Current Date
+    var month = new Date().getMonth() + 1; //Current Month
+    var year = new Date().getFullYear(); //Current Year
+    var hours = new Date().getHours(); //Current Hours
+    var min = new Date().getMinutes(); //Current Minutes
+    var sec = new Date().getSeconds(); //Current Seconds
+
+    return date + ':' + month + ':' + year + ' ' + hours + ':' + min + ':' + sec + '+02:00'
+  }
+
+  getLinkIn(type) {
+    if(this.state.activeLinks.includes(type)) {
+      return <View>
+        <Text style={{ flexGrow: 1 }}>{type}-Link: </Text>
+        <TextInput
+          style={localStyles.textIn}
+          value={this.state.stickerInfo.author[type]}
+          onChangeText={(val) => {
+            let info = this.state.stickerInfo
+            info.author[type] = val
+            this.setState({stickerInfo: info})
+          }}
+        />
+      </View>
+    } else {
+      return <Button style={localStyles.addLink} onPress={() => this.addLink(type)} >
+        {type}-Link hinzufügen
+      </Button>
+    }
+  }
+
+  addLink(type) {
+    console.log('add', type)
+    this.setState({activeLinks: [...this.state.activeLinks, type]})
+  }
+
+  removeLink(type) {
+
+  }
+
+  toDetail() {
+    this.props.selectSticker(this.props.latestAdded)
+    this.props.setActiveView('StickerDetail')
+  }
+
 }
 
 var localStyles = StyleSheet.create({
@@ -216,14 +344,46 @@ var localStyles = StyleSheet.create({
     borderBottomWidth: 1,
     paddingHorizontal: 15,
     paddingVertical: 10
+  },
+  textIn: {
+    flexGrow: 2,
+    height: 40,
+    borderColor: "gray",
+    backgroundColor: "#FFF",
+    borderWidth: 1,
+    marginBottom: 10
+  },
+  inWrapper: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  addLink: {
+    flexGrow: 1,
+    paddingVertical: 5,
+    textTransform: "capitalize",
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: 10
   }
 });
 
+const mapDispatchToProps = dispatch => (
+  bindActionCreators({
+    addSticker,
+    selectSticker,
+    setActiveView
+  }, dispatch)
+);
+
 const mapStateToProps = state => {
-  const { stickers } = state;
+  const { stickers, latestAdded } = state;
   return {
-    stickers
+    stickers,
+    latestAdded
   };
 };
 
-export default connect(mapStateToProps)(AddStickerView);
+export default connect(mapStateToProps, mapDispatchToProps)(AddStickerView);

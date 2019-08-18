@@ -21,7 +21,7 @@ class StickerList extends Component {
               <View style={{flex: 1, flexDirection: 'row', justifyContent: 'space-between',alignItems: 'center'}}>
                 <Image    
                   style={{width: 70, height: 70}}
-                  source={{uri: sticker.imageUrl}}></Image>
+                  source={this.getImgSource(sticker.imageUrl)}></Image>
                 <Text>{sticker.name}</Text>
               </View>
             </Item>
@@ -44,6 +44,14 @@ class StickerList extends Component {
     handleItemPress(stickerId) {
       this.props.selectSticker(stickerId)
       this.props.setActiveView('StickerDetail')
+    }
+
+    getImgSource(src) {
+      if(src.includes('http')) {
+        return { uri: src }
+      } else {
+        return src
+      }
     }
 }
 

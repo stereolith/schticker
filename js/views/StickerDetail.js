@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Button } from "@ant-design/react-native";
 import { connect } from "react-redux";
-import MapView, { Marker } from "react-native-maps";
+import MapView, { Marker, Callout } from "react-native-maps";
 
 class StickerDetail extends Component {
   constructor() {
@@ -17,8 +17,7 @@ class StickerDetail extends Component {
   }
 
   render() {
-    if(this.props.activeSticker) {
-      
+    if (this.props.activeSticker) {
       return (
         <ScrollView
           style={{ flex: 1, backgroundColor: "#E5E5E5" }}
@@ -34,7 +33,9 @@ class StickerDetail extends Component {
             />
           </View>
           <View style={localStyles.section}>
-            <Text style={{ fontSize: 22, fontWeight: "bold", paddingBottom: 5 }}>
+            <Text
+              style={{ fontSize: 22, fontWeight: "bold", paddingBottom: 5 }}
+            >
               {this.props.activeSticker.name}
             </Text>
             <Text
@@ -60,7 +61,7 @@ class StickerDetail extends Component {
             </Text>
           </View>
           <View style={localStyles.mapContainer}>
-            {/*<MapView
+            <MapView
               style={localStyles.map}
               region={{
                 latitude: this.props.activeSticker.location[0].lat,
@@ -75,11 +76,38 @@ class StickerDetail extends Component {
                   longitude: this.props.activeSticker.location[0].lon
                 }}
                 title={"schticker"}
-              />
-              </MapView>*/}
+              >
+                <Callout>
+                  <View>
+                    <Button
+                      style={{
+                        width: 150,
+                        paddingVertical: 5,
+                        textTransform: "capitalize",
+                        flex: 1,
+                        flexDirection: "row",
+                        alignItems: "center"
+                      }}
+                      onPress={() =>
+                        Linking.openURL(
+                          "https://www.google.com/maps/search/?api=1&query=" +
+                            this.props.activeSticker.location[0].lat +
+                            "," +
+                            this.props.activeSticker.location[0].lon
+                        )
+                      }
+                    >
+                      in Google Maps öffnen
+                    </Button>
+                  </View>
+                </Callout>
+              </Marker>
+            </MapView>
           </View>
           <View style={localStyles.section}>
-            <Text style={{ fontSize: 22, fontWeight: "bold", paddingBottom: 5 }}>
+            <Text
+              style={{ fontSize: 22, fontWeight: "bold", paddingBottom: 5 }}
+            >
               Dieser Schticker im Netz
             </Text>
             <View style={{ flex: 1, flexDirection: "row", flexGrow: 1 }}>
@@ -90,15 +118,15 @@ class StickerDetail extends Component {
         </ScrollView>
       );
     } else {
-      return <View></View>
+      return <View />;
     }
   }
 
   getImgSource(src) {
-    if(src.includes('http')) {
-      return { uri: src }
+    if (typeof src == "string" && src.includes("http")) {
+      return { uri: src };
     } else {
-      return src
+      return src;
     }
   }
 
@@ -112,29 +140,35 @@ class StickerDetail extends Component {
     };
     if (links) {
       return Object.keys(this.props.activeSticker.author.links).map(key => {
-        if(links[key] == '') {
-          return
-        } else { 
+        if (links[key] == "") {
+          return;
+        } else {
           return (
-        <Button
-          style={{
-            flexGrow: 1,
-            paddingVertical: 5,
-            textTransform: "capitalize",
-            flex: 1,
-            flexDirection: "row",
-            alignItems: "center",
-            paddingTop: 10
-          }}
-          onPress={() => Linking.openURL(links[key])}
-        >
-          <Image
-            style={{ height: 25, width: 25, marginRight: 15, color: "#000" }}
-            source={icons[key]}
-            resizeMode="contain"
-          />
-        </Button>
-      )}
+            <Button
+              style={{
+                flexGrow: 1,
+                paddingVertical: 5,
+                textTransform: "capitalize",
+                flex: 1,
+                flexDirection: "row",
+                alignItems: "center",
+                paddingTop: 10
+              }}
+              onPress={() => Linking.openURL(links[key])}
+            >
+              <Image
+                style={{
+                  height: 25,
+                  width: 25,
+                  marginRight: 15,
+                  color: "#000"
+                }}
+                source={icons[key]}
+                resizeMode="contain"
+              />
+            </Button>
+          );
+        }
       });
     }
     return;
@@ -159,7 +193,7 @@ var localStyles = StyleSheet.create({
 
 const mapStateToProps = state => {
   const { stickers } = state;
-  console.log(state.activeStickerId)
+  console.log(state.activeStickerId);
   return {
     activeStickerId: state.activeSticker,
     activeSticker: state.stickers.find(

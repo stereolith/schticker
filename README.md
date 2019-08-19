@@ -21,10 +21,11 @@ Alle Sticker, die sich in der App befinden, sind in der *Liste* aufgeführt und 
 
 NutzerInnen können natürlich auch selbst Sticker zur App hinzufügen. Dazu wählen Sie über das Menü den Punkt *Hinzufügen* aus. Es lässt sich ein Foto aufnehmen oder aus den bereits aufgenommenen Fotos des Gerätes wählen. Außerdem lässt sich der aktuelle Standort der Nutzerin/des Nutzers verwenden, um diesen dem Sticker-Eintrag hinzuzufügen, sollte sich die Nutzerin/der Nutzer in direkter Nähe des Stickers befinden. 
 
-Wird die Eingabe des Fotos und des Standortes bestätigt, öffnet sich eine weitere Seite, auf der die Informationen zum Sticker, wie Beschreibung, UrheberIn und Weblinks hinterlegt werden können. Durch Bestätigen wird der Sticker der App-Datenbank hinzugefügt und lässt sich direkt oder alternativ über die *Liste* aufrufen.
+Wird die Eingabe des Fotos und des Standortes bestätigt, öffnet sich eine weitere Seite, auf der die Informationen zum Sticker, wie Beschreibung, UrheberIn und Weblinks hinterlegt werden können. Durch Bestätigen wird der Sticker der App-Datenbank hinzugefügt. Die so erstellte *Detailseite* lässt sich direkt oder alternativ über die *Liste* aufrufen.
 
-Über den stets in der oberen linken Bildschirmecke eingeblendeten Button gelangt man in das Menü der App. Dort sind alle bisher implementieren Funktionen *Scannen*, *Listenansicht* und *Hinzufügen* abrufbar.
+Über den  in der oberen linken Bildschirmecke eingeblendeten Button gelangt man in das Menü der App. Darüber sind alle bisher implementieren Funktionen *Scannen*, *Listenansicht* und *Hinzufügen* abrufbar.
 
 ### Verwendete Technologien
 Im Rahmen der technischen Umsetzung wurde verschiedene Software genutzt. Kleine 3D-Modelle und Animationen wurden in **3ds Max** erstellt.
 
+Die App wurde mithilfe von **React Native** und **Viro** realisiert.

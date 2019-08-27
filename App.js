@@ -15,6 +15,7 @@
  //Nicht nur ganze Dateien, sondern auch einzelne Funktionen
  import React, { Component } from 'react'
  import { createStore } from 'redux'
+ import {YellowBox} from 'react-native';
  import { Provider } from 'react-redux'
  import { PersistGate } from 'redux-persist/integration/react';
  import { store, persistor } from './js/redux/store';
@@ -25,7 +26,7 @@
  export default class ViroSample extends Component {
    constructor() {
      super();
- 
+     console.disableYellowBox = true;
  
    }
  
@@ -35,9 +36,7 @@
      return (
        //<> custom elements: React Elemente, die durch Compiler in HTML-Elemente übertragen werden
        <Provider store={ store }>
-          <PersistGate loading={null} persistor={persistor}>
             <NavWraper></NavWraper>
-          </PersistGate>
        </Provider>
      );
    }

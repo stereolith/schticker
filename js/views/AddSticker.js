@@ -9,7 +9,8 @@ import {
   TextInput
 } from "react-native";
 import { Button } from "@ant-design/react-native";
-import ImagePicker from "react-native-image-picker";
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+// import ImagePicker from "react-native-image-picker";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -20,8 +21,9 @@ class AddStickerView extends Component {
     super();
     this.state = {
       activeStep: "CAMERA",
+      errorMsg: '',
       stickerInfo: {
-        image: "",
+        image: "a",
         name: "",
         username: "",
         description: "",
@@ -42,22 +44,24 @@ class AddStickerView extends Component {
   render() {
     return (
       <View style={{ flex: 1, flexGrow: 1 }}>
-        <ScrollView
+        <KeyboardAwareScrollView
           style={{
             flex: 1,
             flexGrow: 1,
             backgroundColor: "#E5E5E5",
-            minHeight: "100%"
+            minHeight: "100%",
+            paddingTop: 65,
           }}
           automaticallyAdjustContentInsets={false}
           showsHorizontalScrollIndicator={false}
           showsVerticalScrollIndicator={false}
         >
           {this.getStep()}
-        </ScrollView>
+        </KeyboardAwareScrollView>
         {this.getBackButton()}
         <Button
-          style={{ flex: 1, position: "absolute", bottom: 15, right: 15 }}
+          disabled={this.stepIsValid() ? null : 'true' }
+          style={this.stepIsValid() ? localStyles.nextButton : [localStyles.nextButton, localStyles.nextButtonInactive]}
           onPress={this.hadleNextPress.bind(this)}
         >
           {this.state.activeStep == "INFO" ? "Abschicken" : "Weiter"}
@@ -91,36 +95,36 @@ class AddStickerView extends Component {
   }
 
   showImagePicker() {
-    const options = {
-      title: "Select Avatar",
-      storageOptions: {
-        skipBackup: true,
-        path: "images"
-      }
-    };
+    // const options = {
+    //   title: "Select Avatar",
+    //   storageOptions: {
+    //     skipBackup: true,
+    //     path: "images"
+    //   }
+    // };
 
-    ImagePicker.showImagePicker(options, response => {
-      console.log("Response = ", response);
+    // ImagePicker.showImagePicker(options, response => {
+    //   console.log("Response = ", response);
 
-      if (response.didCancel) {
-        console.log("User cancelled image picker");
-      } else if (response.error) {
-        console.log("ImagePicker Error: ", response.error);
-      } else if (response.customButton) {
-        console.log("User tapped custom button: ", response.customButton);
-      } else {
-        const source = { uri: response.uri };
+    //   if (response.didCancel) {
+    //     console.log("User cancelled image picker");
+    //   } else if (response.error) {
+    //     console.log("ImagePicker Error: ", response.error);
+    //   } else if (response.customButton) {
+    //     console.log("User tapped custom button: ", response.customButton);
+    //   } else {
+    //     const source = { uri: response.uri };
 
-        // You can also display the image using data:
-        // const source = { uri: 'data:image/jpeg;base64,' + response.data };
+    //     // You can also display the image using data:
+    //     // const source = { uri: 'data:image/jpeg;base64,' + response.data };
 
-        var info = this.state.stickerInfo;
-        info.image = source;
-        this.setState({
-          stickerInfo: info
-        });
-      }
-    });
+    //     var info = this.state.stickerInfo;
+    //     info.image = source;
+    //     this.setState({
+    //       stickerInfo: info
+    //     });
+    //   }
+    // });
   }
 
   getStep() {
@@ -128,24 +132,11 @@ class AddStickerView extends Component {
       case "CAMERA":
         return (
           <View style={{ width: "100%", flex: 1, ...localStyles.section }}>
-            <Button
-              style={{
-                flexGrow: 1,
-                paddingVertical: 5,
-                textTransform: "capitalize",
-                flex: 1,
-                flexDirection: "row",
-                alignItems: "center",
-                paddingTop: 10
-              }}
-              onPress={this.showImagePicker.bind(this)}
-            >
-              Foto hinzufügen
-            </Button>
-            <Image
-              source={this.state.stickerInfo.image}
-              style={{ width: 200, height: 100 }}
-            />
+
+            {this.addPicture()}
+
+            <Text style={{fontSize: 16, paddingBottom: 15}}>Befindest du dich gerade am <Text style={{fontWeight: 'bold'}}>Standort</Text> des Schtickers?{"\n"}
+            Hier hast du die Möglickeit, deinen aktuellen Standort dem Schticker hinzuzufügen:</Text>
             <Button
               style={localStyles.addLink}
               onPress={this.getLocation.bind(this)}
@@ -163,7 +154,6 @@ class AddStickerView extends Component {
                   fontSize: 22,
                   fontWeight: "bold",
                   paddingBottom: 5,
-                  paddingTop: 65
                 }}
               >
                 Infos hinzufügen
@@ -171,6 +161,7 @@ class AddStickerView extends Component {
               <View>
                 <Text style={{ flexGrow: 1 }}>Name: </Text>
                 <TextInput
+                  placeholder="Pflichtfeld"
                   style={localStyles.textIn}
                   value={this.state.stickerInfo.name}
                   onChangeText={val => {
@@ -183,6 +174,7 @@ class AddStickerView extends Component {
               <View>
                 <Text style={{ flexGrow: 1 }}>Beschreibung: </Text>
                 <TextInput
+                  placeholder="Pflichtfeld"
                   style={localStyles.textIn}
                   value={this.state.stickerInfo.description}
                   onChangeText={val => {
@@ -195,6 +187,7 @@ class AddStickerView extends Component {
               <View>
                 <Text style={{ flexGrow: 1 }}>Posten als (username): </Text>
                 <TextInput
+                  placeholder="Pflichtfeld"
                   style={localStyles.textIn}
                   value={this.state.stickerInfo.username}
                   onChangeText={val => {
@@ -237,7 +230,7 @@ class AddStickerView extends Component {
         );
       case "SUCCESS":
         return (
-          <View>
+          <View style={{ width: "100%", flex: 1, ...localStyles.section }}>
             <Text
               style={{
                 fontSize: 22,
@@ -259,6 +252,65 @@ class AddStickerView extends Component {
     }
   }
 
+  stepIsValid() {
+    switch (this.state.activeStep) {
+      case "CAMERA":
+        return this.state.stickerInfo.image != '' ? true : false
+      case "INFO":
+        var s = this.state.stickerInfo
+        return (s.name != '' && s.username != '' && s.description != '') ? true : false
+      default:
+        return true
+    }
+  } 
+
+  addPicture() {
+    if (this.state.stickerInfo.image == '') {
+      return (
+        <View>
+          <Button
+            style={{
+              flexGrow: 1,
+              paddingVertical: 5,
+              flex: 1,
+              flexDirection: "row",
+              alignItems: "center",
+              paddingTop: 10,
+              marginBottom: 20
+            }}
+            onPress={this.showImagePicker.bind(this)}
+          >
+            1. Foto hinzufügen
+          </Button>
+        </View>
+      )
+
+    } else {
+      return (
+      <View>
+        <Button
+          style={{
+            flexGrow: 1,
+            paddingVertical: 5,
+            flex: 1,
+            flexDirection: "row",
+            alignItems: "center",
+            paddingTop: 10,
+            marginBottom: 20
+          }}
+          onPress={this.showImagePicker.bind(this)}
+        >
+          Foto ändern
+        </Button>
+        <Image
+          source={this.state.stickerInfo.image}
+          style={{ flexGrow: 1, height: 250, borderWidth: 1, borderColor: '#777', marginTop: 15, marginBottom: 15}}
+          />
+      </View>
+      )
+    }
+  }
+
   getBackButton() {
     if (
       this.state.activeStep == "CAMERA" ||
@@ -268,7 +320,7 @@ class AddStickerView extends Component {
     } else {
       return (
         <Button
-          style={{ flex: 1, position: "absolute", bottom: 15, left: 15 }}
+          style={{ flex: 1, borderWidth: 2, position: "absolute", bottom: 15, left: 15 }}
           onPress={this.handleBackPress.bind(this)}
         >
           Zurück
@@ -403,11 +455,28 @@ var localStyles = StyleSheet.create({
   addLink: {
     flexGrow: 1,
     paddingVertical: 5,
-    textTransform: "capitalize",
     flex: 1,
     flexDirection: "row",
     alignItems: "center",
     paddingTop: 10
+  },
+  nextButton: {
+    flex: 1,
+    position: "absolute",
+    bottom: 15, 
+    right: 15,
+    backgroundColor: '#71E5E6',
+    borderWidth: 1,
+    borderColor: '#FFF',
+    shadowOffset:{   height: 1,  },
+    shadowColor: '#71E5E6',
+    shadowOpacity: 1.0,
+  },
+  nextButtonInactive: {
+    backgroundColor: '#b8dede',
+    shadowColor: '#b8dede',
+    color: '#333'
+
   }
 });
 

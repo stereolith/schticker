@@ -55,10 +55,11 @@ class Sidebar extends Component {
           onPress={() => {this.handleLinkPress(item.element)}}
           style={{flexGrow: 0, flexDirection: 'column'}}
           underlayColor={'#BBB'}
+          key={item.element}
           >
           <View style={{marginVertical: 30, marginHorizontal: 15, flex:1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start'}}>
             <Image    
-              style={{height: 30, width: 30, marginRight: 15, color: '#000'}}
+              style={{height: 30, width: 30, marginRight: 15}}
               source={item.icon}
               >
             </Image>

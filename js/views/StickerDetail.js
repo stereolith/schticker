@@ -61,7 +61,7 @@ class StickerDetail extends Component {
             </Text>
           </View>
           <View style={localStyles.mapContainer}>
-            <MapView
+            {/* <MapView
               style={localStyles.map}
               region={{
                 latitude: this.props.activeSticker.location[0].lat,
@@ -81,9 +81,9 @@ class StickerDetail extends Component {
                   <View>
                     <Button
                       style={{
+                        fontSize: 10,
                         width: 150,
                         paddingVertical: 5,
-                        textTransform: "capitalize",
                         flex: 1,
                         flexDirection: "row",
                         alignItems: "center"
@@ -102,7 +102,7 @@ class StickerDetail extends Component {
                   </View>
                 </Callout>
               </Marker>
-            </MapView>
+            </MapView> */}
           </View>
           <View style={localStyles.section}>
             <Text
@@ -148,20 +148,19 @@ class StickerDetail extends Component {
               style={{
                 flexGrow: 1,
                 paddingVertical: 5,
-                textTransform: "capitalize",
                 flex: 1,
                 flexDirection: "row",
                 alignItems: "center",
                 paddingTop: 10
               }}
+              key={key}
               onPress={() => Linking.openURL(links[key])}
             >
               <Image
                 style={{
                   height: 25,
                   width: 25,
-                  marginRight: 15,
-                  color: "#000"
+                  marginRight: 15
                 }}
                 source={icons[key]}
                 resizeMode="contain"

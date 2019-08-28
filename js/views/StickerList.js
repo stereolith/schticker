@@ -52,10 +52,10 @@ class StickerList extends Component {
   }
 
   getImgSource(src) {
-    if (typeof src == "string" && src.includes("http")) {
+    if (typeof src == "string") {
       return { uri: src };
     } else {
-      return src;
+      return src
     }
   }
 }

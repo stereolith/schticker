@@ -25,10 +25,10 @@ class NavWrapper extends Component {
 
         const stickerDb = [
             [
-                'Je suis partout',
+                'Je suis partoutl',
                 '019:05:25 12:18:54+02:00',
                 'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img1/img1.jpg',
+                require('../res/logo.png'),
                 [
                     {
                         'lat': 50.946440,

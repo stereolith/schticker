@@ -29,7 +29,7 @@ class StickerDetail extends Component {
             <Image
               style={{ height: 150, width: 250, alignSelf: "center" }}
               resizeMode="contain"
-              source={{ uri: this.props.activeSticker.imageUrl }}
+              source={ this.getImgSource() }
             />
           </View>
           <View style={localStyles.section}>
@@ -72,13 +72,10 @@ class StickerDetail extends Component {
   }
 
   getImgSource(src) {
-    if (typeof src == "string" && src.includes("http")) {
+    if (typeof src == "string") {
       return { uri: src };
     } else {
-      console.log(RNFS.DocumentDirectoryPath + src);
-      return {
-        uri: RNFS.DocumentDirectoryPath + src
-      };
+      return src
     }
   }
 

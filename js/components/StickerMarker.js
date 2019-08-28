@@ -21,9 +21,14 @@ class StickerMarker extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      runAnimation: false, 
+      animationOpacity: 1
+    }
+
     ViroARTrackingTargets.createTargets({
       [this.props.stickerID]: {
-        source: { uri: this.props.imgUri },
+        source: this.getImgSource(this.props.imgUri),
         orientation: "Up",
         physicalWidth: this.props.width
       }
@@ -61,22 +66,42 @@ class StickerMarker extends Component {
         <Viro3DObject
           source={require("../res/sphere.vrx")}
           position={[0.02, 0, 0.01]}
-          scale={[0.01, 0.01, 0.01]}
-          opacity={0.9}
+          scale={[0.02, 0.02, 0.02]}
+          opacity={0.95}
           animation={{ name: "Take 001", run: true, loop: true }}
           type="VRX"
           onClick={() => this.props.selectSticker(this.props.stickerID)}
         />
         <Viro3DObject
           source={require("../res/textFound.vrx")}
-          position={[0.02, 0, 0.01]}
-          scale={[0.01, 0.01, 0.01]}
-          animation={{ name: "Take 001", run: true, loop: true }}
+          position={[0.02, 0, -0.03]}
+          rotation={[-90, 0, 0]}
+          scale={[0.02, 0.02, 0.02]}
+          animation={{ name: "Take 001", run: this.state.runAnimation }}
           type="VRX"
+          opacity={this.state.animationOpacity}
           onClick={() => this.props.selectSticker(this.props.stickerID)}
         />
+        {this.onFound()}
       </ViroARImageMarker>
     );
+  }
+
+  getImgSource(src) {
+    if (typeof src == "string") {
+      return { uri: src };
+    } else {
+      return src
+    }
+  }
+
+  onFound () {
+    setTimeout(() => {
+      this.setState({runAnimation: true})
+    }, 4000)
+    setTimeout(() => {
+      this.setState({animationOpacity: 0})
+    }, 12000)
   }
 }
 

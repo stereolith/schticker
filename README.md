@@ -9,9 +9,7 @@ Jeder und jedem von uns begegnen (gerade in Köln) täglich zahlreiche Sticker a
 Oft weiß man jedoch nicht auf Anhieb, für was ein bestimmter Sticker steht; ob es sich dabei um Werbung oder doch um ein Kunst- oder Street Art-Projekt handelt.
 **Schticker**, eine Augmented Reality App, ermöglicht deshalb das Entschlüsseln, Kategorisieren und Wiederfinden von Stickern im urbanen Raum.
 
-<img src="doc/scan.jpeg" width="250" />
-<img src="doc/list.jpeg" width="250" />
-<img src="doc/detail.PNG" width="250" />
+<img src="doc/scan.jpeg" width="250" />  <img src="doc/list.jpeg" width="250" />  <img src="doc/detail.PNG" width="250" />
 
 Ein Demo-Video findet sich [hier](https://github.com/stereolith/schticker/raw/master/doc/Schticker.mp4).
 

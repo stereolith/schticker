@@ -23,7 +23,7 @@ class AddStickerView extends Component {
       activeStep: "CAMERA",
       errorMsg: "",
       stickerInfo: {
-        image: "",
+        image: "aaa",
         name: "",
         username: "",
         description: "",
@@ -363,10 +363,10 @@ class AddStickerView extends Component {
       {
         name: this.state.stickerInfo.author.name,
         links: {
-          facebook: this.state.stickerInfo.author.facebook,
-          instagram: this.state.stickerInfo.author.instagram,
-          twitter: this.state.stickerInfo.author.twitter,
-          website: this.state.stickerInfo.author.website
+          facebook: this.state.stickerInfo.author.links.facebook,
+          instagram: this.state.stickerInfo.author.links.instagram,
+          twitter: this.state.stickerInfo.author.links.twitter,
+          website: this.state.stickerInfo.author.links.website
         }
       },
       this.state.stickerInfo.description

@@ -28,7 +28,7 @@ class NavWrapper extends Component {
                 'Je suis partoutl',
                 '019:05:25 12:18:54+02:00',
                 'Anna',
-                require('../res/logo.png'),
+                require('../res/sticker-db/logo.png'),
                 [
                     {
                         'lat': 50.946440,

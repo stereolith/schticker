@@ -4,7 +4,7 @@ Die App **Schticker** entstand im Rahmen der AM3b-Übung [Augmented City – Str
 
 Mitglieder der Projektgruppe: Kim Roland, Lukas Mönch, Anna Casters.
 
-Ein Demo-Video der App-Funktionalitäten findet sich [hier](https://github.com/stereolith/schticker/raw/master/doc/Schticker.mp4).
+Ein Demo-Video der App findet sich [hier](https://github.com/stereolith/schticker/raw/master/doc/Schticker.mp4).
 
 ### Projektidee 
 Jeder und jedem von uns begegnen (gerade in Köln) täglich zahlreiche Sticker auf Straßenlaternen, Türen, Hauswänden, Stromkästen oder an Bahnhaltestellen. 

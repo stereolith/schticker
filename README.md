@@ -28,4 +28,4 @@ Wird die Eingabe des Fotos und des Standortes bestätigt, öffnet sich eine weit
 ### Verwendete Technologien
 Im Rahmen der technischen Umsetzung wurde verschiedene Software genutzt. Kleine 3D-Modelle und Animationen wurden in **3ds Max** erstellt.
 
-Die App wurde mithilfe von **React Native** und **Viro** realisiert.
+Die App wurde mithilfe von **React Native** realisiert. Die VR-Komponente wurde mithilfe der Library **Viro React** implementiert, die einen Wrapper für native AR-Funktionalitäten von iOS und Android (ARKit und ARCore) buildet. Um schnell einen Prototypen der App anfertigen zu können wurde das Design-Framework **Ant Design** genutzt, welches Komponenten wie Buttons und Input-Felder als fertige React-Components bietet.

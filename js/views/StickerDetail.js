@@ -103,7 +103,6 @@ class StickerDetail extends Component {
                 <View>
                   <Button
                     style={{
-                      fontSize: 10,
                       width: 150,
                       paddingVertical: 5,
                       flex: 1,
@@ -113,13 +112,13 @@ class StickerDetail extends Component {
                     onPress={() =>
                       Linking.openURL(
                         "https://www.google.com/maps/search/?api=1&query=" +
-                          this.props.activeSticker.location[0].lat +
-                          "," +
-                          this.props.activeSticker.location[0].lon
+                        this.props.activeSticker.location[0].lat +
+                        "," +
+                        this.props.activeSticker.location[0].lon
                       )
                     }
                   >
-                    in Google Maps öffnen
+                    Google Maps
                   </Button>
                 </View>
               </Callout>

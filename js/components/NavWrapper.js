@@ -168,26 +168,27 @@ class NavWrapper extends Component {
       //     },
       //     "Melodic Hardcore-Band aus dem Rheinland/Ruhrgebiet. Stilistisch bewegt sich die Formation zwischen Punk Rock, Hardcore, Shoegaze und Pop. Label: Redfield Records."
       //   ],
-      ["Hole you seen him?!",
-        "2019:07:14 09:12:54+02:00",
-        "Kim",
-        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/holeyouseenhim/holeyouseenhim.jpg",
-        [
-          {
-            lat: 50.92603,
-            lon: 6.931421666666667,
-            added: "2019:07:14 10:42:57+02:00"
-          }
-        ],
-        {
-          name: "wHOLE heART",
-          links: {
-            facebook: "hhttps://www.facebook.com/HoleStreetart/",
-            instagram: "https://www.instagram.com/wholeheart74/?hl=de"
-          }
-        },
-        "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
-      ],
+      // [
+      //   "Hole you seen him?!",
+      //   "2019:07:14 09:12:54+02:00",
+      //   "Kim",
+      //   "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/holeyouseenhim/holeyouseenhim.jpg",
+      //   [
+      //     {
+      //       lat: 50.92603,
+      //       lon: 6.931421666666667,
+      //       added: "2019:07:14 10:42:57+02:00"
+      //     }
+      //   ],
+      //   {
+      //     name: "wHOLE heART",
+      //     links: {
+      //       facebook: "hhttps://www.facebook.com/HoleStreetart/",
+      //       instagram: "https://www.instagram.com/wholeheart74/?hl=de"
+      //     }
+      //   },
+      //   "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
+      // ],
 
       //   [
       //     "Say yes to hummus",
@@ -214,7 +215,7 @@ class NavWrapper extends Component {
         "Je suis partout",
         "019:05:25 12:18:54+02:00",
         "Anna",
-        "https://github.com/stereolith/schticker/blob/master/sticker-db/img1/img1.jpg",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/img1/img1.jpg",
         [
           {
             lat: 50.932637,
@@ -226,7 +227,7 @@ class NavWrapper extends Component {
           name: "Thierry Jaspart",
           links: {
             facebook:
-              'facebook": "https://www.facebook.com/thierryjaspartofficial/',
+              "https://www.facebook.com/thierryjaspartofficial/",
             website:
               "http://thierry-jaspart.com/?fbclid=IwAR3S7y0tEvmGdFJZQdBB_HOqNRKS5DifKo9NcUiYsw3-_Dt9DkxEBOeV2to",
             twitter: "https://twitter.com/andalltha?lang=de"
@@ -280,7 +281,7 @@ class NavWrapper extends Component {
         "R.I.P. Stecken",
         "2019:05:25 12:18:54+02:00",
         "Anna",
-        "https://github.com/stereolith/schticker/blob/master/sticker-db/img4/img4.jpg",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/img4/img4.jpg",
         [
           {
             lat: 50.932879,
@@ -418,8 +419,8 @@ class NavWrapper extends Component {
         "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/jada/jada.jpg",
         [
           {
-            lat: 50.5530888,
-            lon: 6.554941,
+            lat: 50.92524666666667,
+            lon: 6.930391666666667,
             added: "2019:07:14 10:42:57+02:00"
           }
         ],
@@ -514,7 +515,6 @@ class NavWrapper extends Component {
           name: "Alkoholfreie Radler Aktion",
           links: {
             facebook: "https://www.facebook.com/AlkoholfreieRadlerAktion/",
-            youtube: "https://www.youtube.com/channel/UCm5a0Askh_Oy21Y_LITbbPA"
           }
         },
         "Politisch gesellschaftliche Bewegung gegen die Ächtung von alkoholfreiem Radler."
@@ -549,8 +549,8 @@ class NavWrapper extends Component {
         "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/tuk_cologne/tuk_cologne.jpg",
         [
           {
-            lat: 50.555043,
-            lon: 6.56198,
+            lat: 50.930675,
+            lon: 6.938833333333333,
             added: "2019:07:14 10:42:57+02:00"
           }
         ],
@@ -570,8 +570,8 @@ class NavWrapper extends Component {
         "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/urbannipple/urbannipple.jpg",
         [
           {
-            lat: 50.554998,
-            lon: 6.5619488,
+            lat: 50.93055,
+            lon: 6.938746666666667,
             added: "2019:07:14 10:42:57+02:00"
           }
         ],
@@ -662,8 +662,8 @@ class NavWrapper extends Component {
         "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/wholestreetheart/wholestreetheart.jpg",
         [
           {
-            lat: 50.5534458,
-            lon: 6.5555092,
+            lat: 50.92623833333333,
+            lon: 6.93197,
             added: "2019:07:14 10:42:57+02:00"
           }
         ],

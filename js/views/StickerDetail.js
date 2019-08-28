@@ -64,8 +64,6 @@ class StickerDetail extends Component {
           {this.getMapSection()}
 
           {this.linkSection()}
-
-          <View style={localStyles.section} />
         </ScrollView>
       );
     } else {
@@ -145,7 +143,7 @@ class StickerDetail extends Component {
     linkList.forEach(el => {
       if (el != "") isEmpty = false;
     });
-    console.log(isEmpty)
+    console.log(isEmpty);
 
     if (!isEmpty) {
       return (
@@ -171,7 +169,7 @@ class StickerDetail extends Component {
       website: require("../res/icons/globe.png")
     };
 
-    console.log(links)
+    console.log(links);
 
     if (links) {
       return Object.keys(this.props.activeSticker.author.links).map(key => {

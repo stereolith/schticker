@@ -41,6 +41,7 @@ class Sidebar extends Component {
               sidebar={sidebar}
               position="left"
               open={this.props.activeSidebar}
+              onOpenChange={(open) => {this.props.setSidebar(open)}}
               drawerRef={el => (this.drawer = el)}
               drawerBackgroundColor="#FFF"
             >

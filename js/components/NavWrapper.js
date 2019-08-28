@@ -24,216 +24,345 @@ class NavWrapper extends Component {
         if(this.props.stickers.length > 0) return;
 
         const stickerDb = [
+            
             [
-                'Je suis partoutl',
-                '019:05:25 12:18:54+02:00',
-                'Anna',
-                require('../res/logo.png'),
-                [
-                    {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
-                    }
-                ],
-                {
-                    'name': 'Thierry Jaspart',
-                    'links': {
-                        'facebook': 'facebook": "https://www.facebook.com/thierryjaspartofficial/',
-                        'website':'http://thierry-jaspart.com/?fbclid=IwAR3S7y0tEvmGdFJZQdBB_HOqNRKS5DifKo9NcUiYsw3-_Dt9DkxEBOeV2to',
-                        'twitter': 'https://twitter.com/andalltha?lang=de'
-                    }
-                },
-                'Streetart Projekt namens "Andalltha" vom belgischen Künstler Thierry Jaspart,"Je suis partout" gehört zur Stickerreihe j"esxiste'
+        'Biermedia',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/biermedia.jpg'),
+        [
+            {
+                'lat': 50.5551528,
+                'lon': 6.5627168,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Fachschaft Intermedia',
+            'links': {
+                'facebook': 'https://www.facebook.com/intermedia.uni.koeln/',
+        'website': 'https://fachschaft-intermedia.de'
+            }
+        },
+        'Party-Reihe der Fachschaft des Studiengangs Intermedia der Universität zu Köln.'
             ],
-            [
-                '#Duckel',
-                '2019:05:25 12:18:54+02:00',
-                'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img2/img2.jpg',
-                [
-                    {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
-                    }
-                ],
-                {
-                    'name': 'Duckel Projek',
-                    'links': {
-                        'instagram': 'https://www.instagram.com/street.duckel/' 
-                    }
-                },
-                'Der Künstler ist unbekannt, Sticker gehört zum Duckel Projekt, Instagram: @street.duckel'
-            ],
-            [
-                'PilzWald',
-                '2019:05:25 12:18:54+02:00',
-                'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img3/img3.jpg',
-                [
-                    {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
-                    }
-                ],
-                {
-                    'name': 'Paul&Alex',
-                    'links': {
-                        'website': 'https://www.pilzwald.de' 
-                    }
-                },
-                'StartUp: DIY Tutorials, um selber eigene Speisepilze im eigenen Haus oder Garten anzubauen; Speisepilzzucht in der Stadt'
-            ],
-            [
-                'Phase 10',
-                '2019:05:22 09:12:54+02:00',
-                'Lukas',
-                'https://raw.githubusercontent.com/stereolith/schticker/master/js/res/uno.jpg',
-                [
-                    {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:04:06 10:42:57+02:00'
-                    }
-                ],
-                {
-                    'name': 'Phase 10 Spielkarte',
-                    'links': {
-                        'facebook': 'https://www.facebook.com/BLAW.CGN/'
-                    }
-                },
-                'Spielkarte für das Spiel Phase10'
-            ], 
             [
                 'BLAW BLAW BLAW',
-                '2019:05:22 09:12:54+02:00',
+                '2019:07:14 09:12:54+02:00',
                 'Kim',
-                'https://raw.githubusercontent.com/stereolith/schticker/master/js/res/vans.png',
+                require('../res/sticker-db/blawblawblaw.jpg'),
                 [
                     {
                         'lat': 50.946440,
                         'lon': 6.917723,
-                        'added': '2019:04:06 10:42:57+02:00'
+                        'added': "2019:04:06 10:42:57+02:00"
                     }
                 ],
                 {
-                    'name': 'BLAW BLAW BLAW Kollektiv',
+                    'name': 'BLAW BLAW BLAW',
                     'links': {
                         'facebook': 'https://www.facebook.com/BLAW.CGN/'
                     }
                 },
-                'Street-Art Kollektiv aus Köln ohne nähere Angaben'
+                'Street-Art Kollektiv aus Köln ohne nähere Angaben.'
             ],
             [
-                'R.I.P. Stecken',
-                '2019:05:25 12:18:54+02:00',
-                'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img4/img4.jpg',
+                'Chicago am Rhein',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/chicagoamrhein.jpg'),
+        [
+            {
+                'lat': 50.5531032,
+                'lon': 6.5549542,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Der lange Tünn (Anton Claaßen)',
+            'links': {
+                'facebook': 'https://www.facebook.com/Der-lange-Tünn-851344824960609',
+		'website': 'https://derlangetuenn.koeln/start'
+            }
+            
+        },
+        'Stadtführung durch Köln mit einem der letzten Zeitzeugen der Kölner Rotlichtszene der 60er, 70er und 80er Jahre.'
+            ],
+        [
+                'Desmiregal',
+                '2019:07:14 09:12:54+02:00',
+                'Kim',
+                require('../res/sticker-db/desmiregal.jpg'),
                 [
                     {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
+                        'lat': 50.948232,
+                        'lon': 6.954733,
+                        'added': '2019:07:14 10:42:57+02:00'
                     }
                 ],
                 {
-                    'name': 'unkown',
+                    'name': 'Tuk Streetart',
                     'links': {
-                        'facebook': 'https://www.facebook.com/pages/Stecken/106478066081421',
-                        'website': 'https://www.ksta.de/koeln/innenstadt/koelner-kult-club--stecken--szene-club-wird-ein-heizungskeller-2251162' 
+                        'facebook': 'https://www.facebook.com/TukArts/',
+                'website': 'https://www.instagram.com/tuk_streetart'
                     }
                 },
-                'Stecken ist ein ehemaliger Underground-Club in Köln und wurde 2014 dauerhauft geschlossen. Der Club im Keller eines Wohnhauses zog mehr als 20 Jahre lang junge Menschen aus der ganzen Welt an. Heute befindet sich dort ein Heizungskeller.'
-            ],
-            [
-                'fckng done.',
-                '2019:05:25 12:18:54+02:00',
-                'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img5/img5.jpg',
+                'Straßenkünstler aus Köln mit Fokus auf Schablonen und ortsspezifische Paste-Ups (weltweit). "Cross roads. Cross borders. Cross minds." Dieser Sticker ist eine Parodie des Modelabels Desigual.'
+        ],
+        [
+                'Esel & Schnörres',
+                '2019:07:14 09:12:54+02:00',
+                'Kim',
+                require('../res/sticker-db/eselschnoerres.jpg'),
                 [
                     {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
+                        'lat': 50.5552302,
+                        'lon': 6.5626988,
+                        'added': '2019:07:14 10:42:57+02:00'
                     }
                 ],
                 {
-                    'name': 'fckng done official',
+                    'name': 'Philip Treutel und Luca Knezevic',
                     'links': {
-                        'instagram': 'https://www.instagram.com/fckngdone.official/' 
+                'website': 'https://eselundschnoerres.podigee.io'
                     }
                 },
-                'Dieser Sticker steht symbolisch für die Bewältigung und das Abschließen mit etwas Großem, was einen über längere Zeit beschäftigt hat. Somit sind diese Aufkleber eine Aussage der Erleichterung.'
-            ],
-            [
-                'Trash Tristan Tattoo',
-                '2019:05:25 12:18:54+02:00',
-                'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img5/img5.jpg',
-                [
-                    {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
-                    }
-                ],
-                {
-                    'name': 'Tristan Baumer',
-                    'links': {
-                        'instagram': 'https://www.instagram.com/trashtristantattoo/?hl=de',
-                        'website': 'https://www.sukitattoo-cologne.com/tätowierer-tristan-galerie/'
-                    }
-                },
-                'Tristan Baumer ist ein Tätowierer des Tattoostudios Sukitattoo-cologne. Er arbeitet in den Bereichen Blackwork, Oldschool und Contemporary.'
-            ],
-            [
-                'Radio Love Love',
-                '2019:05:25 12:18:54+02:00',
-                'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img7/img7.jpg',
-                [
-                    {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
-                    }
-                ],
-                {
-                    'name': 'Razzy Bailey und Twit One',
-                    'links': {
-                        'facebook': 'https://www.facebook.com/RadioLoveLoveCGN/',
-                        'website': 'http://ihateshirts.blogspot.com',
-                        'soundcloud': 'https://soundcloud.com/radiolovelove'
-                    }
-                },
-                'Umgesetzt von Twit One (kölner Musikproduzent und DJ), inspiriert von Razzy Baileys Song I hate hate von 1974. Läuft unter dem Label von Radio LoveLove'
-            ],
-            [
-                'Späm x Reth1',
-                '2019:05:25 12:18:54+02:00',
-                'Anna',
-                'https://github.com/stereolith/schticker/raw/master/sticker-db/img8/img8.jpg',
-                [
-                    {
-                        'lat': 50.946440,
-                        'lon': 6.917723,
-                        'added': '2019:05:22 10:42:54+02:00'
-                    }
-                ],
-                {
-                    'name': 'SpaemSpaem und Reth One',
-                    'links': {
-                        'facebook': 'https://www.facebook.com/pg/Reth.One.Art/posts/',
-                        'website': 'https://www.flvcrew.com',
-                        'website2': 'http://spaemspaem.de',
-                        'instagram': 'https://www.instagram.com/reth.one/?hl=de'
-                    }
-                },
-                'Reth One ist ein deutscher Streetartkünstler mit Schwerpunkt auf Stickern.'
-            ]
+                '"Esel & Schnörres" ist ein Podcast zweier Kölner, die über alles sprechen, was ihnen so einfällt. Das Besondere am Podcast: Alles passiert draußen (außer bei Regen oder Kälte). Philip und Luca nehmen HörerInnen mit zu den unterschiedlichsten Orten und man kann „Live“ dabei sein, wie die beiden interessante Geschichten aus dem Schnörres zaubern.'
+        ],
+        [
+            'You dont see the world as it is',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/eye_anaisnin.jpg'),
+        [
+            {
+                'lat': 50.554719,
+                'lon': 6.5611262,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Unbekannt',
+            'links': {
+		
+            }
+        },
+        'Sticker mit einem Zitat der Schriftstellerin Anais Nin. UrheberIn unbekannt.'
+        ],
+        [
+            'GREENTAXONOMY',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/greentaxonomy.jpg'),
+        [
+            {
+                'lat': 50.952656,
+                'lon': 6.912594,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'GREENTAXONOMY Street Art',
+            'links': {
+		'twitter': 'https://twitter.com/greentaxonomy0',
+            	'instagram': 'https://www.instagram.com/greentaxonomy/'
+            }
+        },
+        'Die Werke von GREENTAXONOMY sind ein Mashup von Organismen und behandeln die Absurdität der Klassifikation und Theorie der Taxonomie.'
         ]
+        [
+            'Reklablatte',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/greentaxonomy2.jpg'),
+        [
+            {
+                'lat': 50.554998,
+                'lon': 6.562364,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'GREENTAXONOMY Street Art',
+            'links': {
+		'twitter': 'https://twitter.com/greentaxonomy0',
+            	'instagram': 'https://www.instagram.com/greentaxonomy/'
+            }
+        },
+        'Die Werke von GREENTAXONOMY sind ein Mashup von Organismen und behandeln die Absurdität der Klassifikation und Theorie der Taxonomie.'
+        ],
+        [
+            'Hambi bleibt',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/hambibleibt.jpg'),
+        [
+            {
+                'lat': 50.932954,
+                'lon': 6.932652,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Hambacher Forst Bewegung',
+            'links': {
+		'facebook': 'https://www.facebook.com/HambacherForstBesetzung/',
+            	'website': 'https://hambacherforst.org'
+            }
+        },
+        'Politisch-gesellschaftliche Bewegung gegen die Rodung und Zerstörung des Hambacher Forstes, einem Wald zwischen Köln und Aachen.'
+        ],
+        [
+            'The Hemp Project',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/hempproject.jpg'),
+        [
+            {
+                'lat': 50.5535718,
+                'lon': 6.5556952,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'The Hemp Project Collective',
+            'links': {
+		'website': 'http://studio-hustle.com/the-hemp-project.html',
+            	'instagram': 'https://www.instagram.com/thehempprojectcollective'
+            }
+        },
+        'The Hemp Project ist ein Freundeskollektiv mit dem Ziel, das Denken über Hanf zu verändern und die Pflanze als nachhaltige Alternative zu promoten, die Nahrung, Kleidung, Obdach, Energie und vieles mehr bietet.'
+        ],
+        [
+            'Hippie Trim',
+            '2019:07:14 09:12:54+02:00',
+            'Kim',
+            require('../res/sticker-db/hippietrim.jpg'),
+            [
+                {
+                    'lat': 50.553858,
+                    'lon': 6.561812,
+                    'added': '2019:07:14 10:42:57+02:00'
+                }
+            ],
+            {
+                'name': 'Hippie Trim Band',
+                'links': {
+            'facebook': 'https://www.facebook.com/hippietrim/',
+                    'website': 'http://www.hippietrim.com'
+                }
+            },
+            'Melodic Hardcore-Band aus dem Rheinland/Ruhrgebiet. Stilistisch bewegt sich die Formation zwischen Punk Rock, Hardcore, Shoegaze und Pop. Label: Redfield Records.'
+          
+        ],
+        [
+            'Hole you seen him?!',
+            '2019:07:14 09:12:54+02:00',
+            'Kim',
+            require('../res/sticker-db/holeyouseenhim.jpg'),
+            [
+                {
+                    'lat': 50.5533708,
+                    'lon': 6.5553118,
+                    'added': '2019:07:14 10:42:57+02:00'
+                }
+            ],
+            {
+                'name': 'wHOLE heART',
+                'links': {
+            'facebook': 'hhttps://www.facebook.com/HoleStreetart/',
+                    'instagram': 'https://www.instagram.com/wholeheart74/?hl=de'
+                }
+            },
+            'Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen.'
+        ],
+
+        [
+        'Say yes to hummus',
+        '2019:07:14 09:12:54+02:00',
+        'Kim',
+        require('../res/sticker-db/hummus.jpg'),
+        [
+            {
+                'lat': 50.5522722,
+                'lon': 6.5527768,
+                'added': '2019:07:14 10:42:57+02:00'
+            }
+        ],
+        {
+            'name': 'Mashery Hummus Kitchen',
+            'links': {
+		'facebook': 'https://www.facebook.com/masheryhummus/'
+            	'website': 'http://www.mashery-hummus.de'
+            }
+        },
+        'Vegetarisches Restaurant im Kölner Kwartier Latäng, die Hummus als Hauptgerichtin verschiednen Varianten anbieten.'
+      ],
+      [
+        'Je suis partout',
+        '019:05:25 12:18:54+02:00',
+        'Anna',
+        require('../res/sticker-db/img1.jpg'),
+        [
+            {
+                'lat': 50.932637,
+                'lon': 6.932696,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Thierry Jaspart',
+            'links': {
+                'facebook': 'facebook": "https://www.facebook.com/thierryjaspartofficial/',
+                'website':'http://thierry-jaspart.com/?fbclid=IwAR3S7y0tEvmGdFJZQdBB_HOqNRKS5DifKo9NcUiYsw3-_Dt9DkxEBOeV2to',
+                'twitter': 'https://twitter.com/andalltha?lang=de'
+            }
+        },
+        'Streetart Projekt namens "Andalltha" vom belgischen Künstler Thierry Jaspart,"Je suis partout" gehört zur Stickerreihe j esxiste'
+      ],
+
+      [
+        '#Duckel',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        require('../res/sticker-db/img2.jpg'),
+        [
+            {
+                'lat': 50.935346,
+                'lon': 6.932756,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Duckel Projek',
+            'links': {
+                'instagram': 'https://www.instagram.com/street.duckel/' 
+            }
+        },
+        'Der Künstler ist unbekannt, Sticker gehört zum Duckel Projekt, Instagram: @street.duckel'
+      ],
+
+      [
+        'PilzWald',
+        '2019:05:25 12:18:54+02:00',
+        'Anna',
+        require('../res/sticker-db/img3.jpg'),
+        [
+            {
+                'lat': 50.936965,
+                'lon': 6.932702,
+                'added': '2019:05:22 10:42:54+02:00'
+            }
+        ],
+        {
+            'name': 'Paul&Alex',
+            'links': {
+                'website': 'https://www.pilzwald.de' 
+            }
+        },
+        'StartUp: DIY Tutorials, um selber eigene Speisepilze im eigenen Haus oder Garten anzubauen; Speisepilzzucht in der Stadt'
+
+      ]
 
 
         this.props.selectSticker('')

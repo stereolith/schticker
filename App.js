@@ -7,40 +7,39 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
- //Startpunkt der App
- //Compiler von React muss wissen, wo er anfängt (hier)
+//Startpunkt der App
+//Compiler von React muss wissen, wo er anfängt (hier)
 
+//Komponenten aus anderen Dateien und Libaries importieren mit 'import'
+//Nicht nur ganze Dateien, sondern auch einzelne Funktionen
+import React, { Component } from "react";
+import { createStore } from "redux";
+import { YellowBox } from "react-native";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./js/redux/store";
+import rootReducer from "./js/redux/reducers";
 
- //Komponenten aus anderen Dateien und Libaries importieren mit 'import'
- //Nicht nur ganze Dateien, sondern auch einzelne Funktionen
- import React, { Component } from 'react'
- import { createStore } from 'redux'
- import {YellowBox} from 'react-native';
- import { Provider } from 'react-redux'
- import { PersistGate } from 'redux-persist/integration/react';
- import { store, persistor } from './js/redux/store';
- import rootReducer from './js/redux/reducers'
+import NavWraper from "./js/components/NavWrapper";
 
- import NavWraper from './js/components/NavWrapper'
-  
- export default class ViroSample extends Component {
-   constructor() {
-     super();
-     console.disableYellowBox = true;
- 
-   }
- 
-   // Replace this function with the contents of _getVRNavigator() or _getARNavigator()
-   // if you are building a specific type of experience.
-   render() {
-     return (
-       //<> custom elements: React Elemente, die durch Compiler in HTML-Elemente übertragen werden
-       <Provider store={ store }>
-            <NavWraper></NavWraper>
-       </Provider>
-     );
-   }
- 
- }
- 
- module.exports = ViroSample
+export default class ViroSample extends Component {
+  constructor() {
+    super();
+    console.disableYellowBox = true;
+  }
+
+  // Replace this function with the contents of _getVRNavigator() or _getARNavigator()
+  // if you are building a specific type of experience.
+  render() {
+    return (
+      //<> custom elements: React Elemente, die durch Compiler in HTML-Elemente übertragen werden
+      <PersistGate loading={null} persistor={persistor}>
+        <Provider store={store}>
+          <NavWraper />
+        </Provider>
+      </PersistGate>
+    );
+  }
+}
+
+module.exports = ViroSample;

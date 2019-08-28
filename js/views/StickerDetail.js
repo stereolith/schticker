@@ -29,7 +29,7 @@ class StickerDetail extends Component {
             <Image
               style={{ height: 150, width: 250, alignSelf: "center" }}
               resizeMode="contain"
-              source={this.getImgSource(this.props.activeSticker.imageUrl)}
+              source={{ uri: this.props.activeSticker.imageUrl }}
             />
           </View>
           <View style={localStyles.section}>
@@ -60,60 +60,11 @@ class StickerDetail extends Component {
               </Text>
             </Text>
           </View>
-          <View style={localStyles.mapContainer}>
-            {/* <MapView
-              style={localStyles.map}
-              region={{
-                latitude: this.props.activeSticker.location[0].lat,
-                longitude: this.props.activeSticker.location[0].lon,
-                latitudeDelta: 0.015,
-                longitudeDelta: 0.0121
-              }}
-            >
-              <Marker
-                coordinate={{
-                  latitude: this.props.activeSticker.location[0].lat,
-                  longitude: this.props.activeSticker.location[0].lon
-                }}
-                title={"schticker"}
-              >
-                <Callout>
-                  <View>
-                    <Button
-                      style={{
-                        fontSize: 10,
-                        width: 150,
-                        paddingVertical: 5,
-                        flex: 1,
-                        flexDirection: "row",
-                        alignItems: "center"
-                      }}
-                      onPress={() =>
-                        Linking.openURL(
-                          "https://www.google.com/maps/search/?api=1&query=" +
-                            this.props.activeSticker.location[0].lat +
-                            "," +
-                            this.props.activeSticker.location[0].lon
-                        )
-                      }
-                    >
-                      in Google Maps öffnen
-                    </Button>
-                  </View>
-                </Callout>
-              </Marker>
-            </MapView> */}
-          </View>
-          <View style={localStyles.section}>
-            <Text
-              style={{ fontSize: 22, fontWeight: "bold", paddingBottom: 5 }}
-            >
-              Dieser Schticker im Netz
-            </Text>
-            <View style={{ flex: 1, flexDirection: "row", flexGrow: 1 }}>
-              {this.linkList()}
-            </View>
-          </View>
+
+          {this.getMapSection()}
+
+          {this.linkSection()}
+
           <View style={localStyles.section} />
         </ScrollView>
       );
@@ -126,22 +77,103 @@ class StickerDetail extends Component {
     if (typeof src == "string" && src.includes("http")) {
       return { uri: src };
     } else {
-      return src;
+      console.log(RNFS.DocumentDirectoryPath + src);
+      return {
+        uri: RNFS.DocumentDirectoryPath + src
+      };
     }
   }
 
-  linkList() {
+  getMapSection() {
+    if (this.props.activeSticker.location.added != null) {
+      return (
+        <View style={localStyles.mapContainer}>
+          <MapView
+            style={localStyles.map}
+            region={{
+              latitude: this.props.activeSticker.location[0].lat,
+              longitude: this.props.activeSticker.location[0].lon,
+              latitudeDelta: 0.015,
+              longitudeDelta: 0.0121
+            }}
+          >
+            <Marker
+              coordinate={{
+                latitude: this.props.activeSticker.location[0].lat,
+                longitude: this.props.activeSticker.location[0].lon
+              }}
+              title={"schticker"}
+            >
+              <Callout>
+                <View>
+                  <Button
+                    style={{
+                      fontSize: 10,
+                      width: 150,
+                      paddingVertical: 5,
+                      flex: 1,
+                      flexDirection: "row",
+                      alignItems: "center"
+                    }}
+                    onPress={() =>
+                      Linking.openURL(
+                        "https://www.google.com/maps/search/?api=1&query=" +
+                          this.props.activeSticker.location[0].lat +
+                          "," +
+                          this.props.activeSticker.location[0].lon
+                      )
+                    }
+                  >
+                    in Google Maps öffnen
+                  </Button>
+                </View>
+              </Callout>
+            </Marker>
+          </MapView>
+        </View>
+      );
+    } else {
+      return <View />;
+    }
+  }
+
+  linkSection() {
     let links = this.props.activeSticker.author.links;
+
+    let linkList = this.linkList(links);
+    let isEmpty = true;
+    linkList.forEach(el => {
+      if (el != "") isEmpty = false;
+    });
+
+    if (!isEmpty) {
+      return (
+        <View style={localStyles.section}>
+          <Text style={{ fontSize: 22, fontWeight: "bold", paddingBottom: 5 }}>
+            Dieser Schticker im Netz
+          </Text>
+          <View style={{ flex: 1, flexDirection: "row", flexGrow: 1 }}>
+            {linkList}
+          </View>
+        </View>
+      );
+    } else {
+      return <View />;
+    }
+  }
+
+  linkList(links) {
     let icons = {
       facebook: require("../res/icons/facebook.png"),
       instagram: require("../res/icons/instagram.png"),
       twitter: require("../res/icons/twitter.png"),
       website: require("../res/icons/globe.png")
     };
+
     if (links) {
       return Object.keys(this.props.activeSticker.author.links).map(key => {
         if (links[key] == "") {
-          return;
+          return "";
         } else {
           return (
             <Button

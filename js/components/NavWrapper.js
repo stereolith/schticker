@@ -23,31 +23,10 @@ class NavWrapper extends Component {
 
     const stickerDb = [
       [
-        "Biermedia",
-        "2019:07:14 09:12:54+02:00",
-        "Kim",
-        require("../res/sticker-db/biermedia.jpg"),
-        [
-          {
-            lat: 50.93098,
-            lon: 6.94088,
-            added: "2019:07:14 10:42:57+02:00"
-          }
-        ],
-        {
-          name: "Fachschaft Intermedia",
-          links: {
-            facebook: "https://www.facebook.com/intermedia.uni.koeln/",
-            website: "https://fachschaft-intermedia.de"
-          }
-        },
-        "Party-Reihe der Fachschaft des Studiengangs Intermedia der Universität zu Köln."
-      ],
-      [
         "BLAW BLAW BLAW",
         "2019:07:14 09:12:54+02:00",
         "Kim",
-        require("../res/sticker-db/blawblawblaw.jpg"),
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/blawblawblaw/blawblawblaw.jpg",
         [
           {
             lat: 50.94644,
@@ -64,31 +43,10 @@ class NavWrapper extends Component {
         "Street-Art Kollektiv aus Köln ohne nähere Angaben."
       ],
       [
-        "Chicago am Rhein",
-        "2019:07:14 09:12:54+02:00",
-        "Kim",
-        require("../res/sticker-db/chicagoamrhein.jpg"),
-        [
-          {
-            lat: 50.925286,
-            lon: 6.9304283,
-            added: "2019:07:14 10:42:57+02:00"
-          }
-        ],
-        {
-          name: "Der lange Tünn (Anton Claaßen)",
-          links: {
-            facebook: "https://www.facebook.com/Der-lange-Tünn-851344824960609",
-            website: "https://derlangetuenn.koeln/start"
-          }
-        },
-        "Stadtführung durch Köln mit einem der letzten Zeitzeugen der Kölner Rotlichtszene der 60er, 70er und 80er Jahre."
-      ],
-      [
         "Desmiregal",
         "2019:07:14 09:12:54+02:00",
         "Kim",
-        require("../res/sticker-db/desmiregal.jpg"),
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/desmiregal/desmiregal.jpg",
         [
           {
             lat: 50.948232,
@@ -106,48 +64,10 @@ class NavWrapper extends Component {
         'Straßenkünstler aus Köln mit Fokus auf Schablonen und ortsspezifische Paste-Ups (weltweit). "Cross roads. Cross borders. Cross minds." Dieser Sticker ist eine Parodie des Modelabels Desigual.'
       ],
       [
-        "Esel & Schnörres",
-        "2019:07:14 09:12:54+02:00",
-        "Kim",
-        require("../res/sticker-db/eselschnoerres.jpg"),
-        [
-          {
-            lat: 50.931195,
-            lon: 6.94083,
-            added: "2019:07:14 10:42:57+02:00"
-          }
-        ],
-        {
-          name: "Philip Treutel und Luca Knezevic",
-          links: {
-            website: "https://eselundschnoerres.podigee.io"
-          }
-        },
-        '"Esel & Schnörres" ist ein Podcast zweier Kölner, die über alles sprechen, was ihnen so einfällt. Das Besondere am Podcast: Alles passiert draußen (außer bei Regen oder Kälte). Philip und Luca nehmen HörerInnen mit zu den unterschiedlichsten Orten und man kann „Live“ dabei sein, wie die beiden interessante Geschichten aus dem Schnörres zaubern.'
-      ],
-      [
-        "You dont see the world as it is",
-        "2019:07:14 09:12:54+02:00",
-        "Kim",
-        require("../res/sticker-db/eye_anaisnin.jpg"),
-        [
-          {
-            lat: 50.929775,
-            lon: 6.936461666666666,
-            added: "2019:07:14 10:42:57+02:00"
-          }
-        ],
-        {
-          name: "Unbekannt",
-          links: {}
-        },
-        "Sticker mit einem Zitat der Schriftstellerin Anais Nin. UrheberIn unbekannt."
-      ],
-      [
         "GREENTAXONOMY",
         "2019:07:14 09:12:54+02:00",
         "Kim",
-        require("../res/sticker-db/greentaxonomy.jpg"),
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/greentaxonomy/greentaxonomy.jpg",
         [
           {
             lat: 50.952656,
@@ -163,7 +83,7 @@ class NavWrapper extends Component {
           }
         },
         "Die Werke von GREENTAXONOMY sind ein Mashup von Organismen und behandeln die Absurdität der Klassifikation und Theorie der Taxonomie."
-      ]
+      ],
       //   [
       //     "Reklablatte",
       //     "2019:07:14 09:12:54+02:00",
@@ -248,27 +168,26 @@ class NavWrapper extends Component {
       //     },
       //     "Melodic Hardcore-Band aus dem Rheinland/Ruhrgebiet. Stilistisch bewegt sich die Formation zwischen Punk Rock, Hardcore, Shoegaze und Pop. Label: Redfield Records."
       //   ],
-      //   [
-      //     "Hole you seen him?!",
-      //     "2019:07:14 09:12:54+02:00",
-      //     "Kim",
-      //     require("../res/sticker-db/holeyouseenhim.jpg"),
-      //     [
-      //       {
-      //         lat: 50.92603,
-      //         lon: 6.931421666666667,
-      //         added: "2019:07:14 10:42:57+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "wHOLE heART",
-      //       links: {
-      //         facebook: "hhttps://www.facebook.com/HoleStreetart/",
-      //         instagram: "https://www.instagram.com/wholeheart74/?hl=de"
-      //       }
-      //     },
-      //     "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
-      //   ],
+      ["Hole you seen him?!",
+        "2019:07:14 09:12:54+02:00",
+        "Kim",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/holeyouseenhim/holeyouseenhim.jpg",
+        [
+          {
+            lat: 50.92603,
+            lon: 6.931421666666667,
+            added: "2019:07:14 10:42:57+02:00"
+          }
+        ],
+        {
+          name: "wHOLE heART",
+          links: {
+            facebook: "hhttps://www.facebook.com/HoleStreetart/",
+            instagram: "https://www.instagram.com/wholeheart74/?hl=de"
+          }
+        },
+        "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
+      ],
 
       //   [
       //     "Say yes to hummus",
@@ -291,30 +210,30 @@ class NavWrapper extends Component {
       //     },
       //     "Vegetarisches Restaurant im Kölner Kwartier Latäng, die Hummus als Hauptgerichtin verschiednen Varianten anbieten."
       //   ],
-      //   [
-      //     "Je suis partout",
-      //     "019:05:25 12:18:54+02:00",
-      //     "Anna",
-      //     require("../res/sticker-db/img1.jpg"),
-      //     [
-      //       {
-      //         lat: 50.932637,
-      //         lon: 6.932696,
-      //         added: "2019:05:22 10:42:54+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "Thierry Jaspart",
-      //       links: {
-      //         facebook:
-      //           'facebook": "https://www.facebook.com/thierryjaspartofficial/',
-      //         website:
-      //           "http://thierry-jaspart.com/?fbclid=IwAR3S7y0tEvmGdFJZQdBB_HOqNRKS5DifKo9NcUiYsw3-_Dt9DkxEBOeV2to",
-      //         twitter: "https://twitter.com/andalltha?lang=de"
-      //       }
-      //     },
-      //     "Streetart Projekt namens 'Andalltha' vom belgischen Künstler Thierry Jaspart. 'Je suis partout' gehört zur Stickerreihe 'J'existe'."
-      //   ],
+      [
+        "Je suis partout",
+        "019:05:25 12:18:54+02:00",
+        "Anna",
+        "https://github.com/stereolith/schticker/blob/master/sticker-db/img1/img1.jpg",
+        [
+          {
+            lat: 50.932637,
+            lon: 6.932696,
+            added: "2019:05:22 10:42:54+02:00"
+          }
+        ],
+        {
+          name: "Thierry Jaspart",
+          links: {
+            facebook:
+              'facebook": "https://www.facebook.com/thierryjaspartofficial/',
+            website:
+              "http://thierry-jaspart.com/?fbclid=IwAR3S7y0tEvmGdFJZQdBB_HOqNRKS5DifKo9NcUiYsw3-_Dt9DkxEBOeV2to",
+            twitter: "https://twitter.com/andalltha?lang=de"
+          }
+        },
+        "Streetart Projekt namens 'Andalltha' vom belgischen Künstler Thierry Jaspart. 'Je suis partout' gehört zur Stickerreihe 'J'existe'."
+      ],
 
       //   [
       //     "#Duckel",
@@ -357,28 +276,28 @@ class NavWrapper extends Component {
       //     },
       //     "StartUp: DIY Tutorials, um selber eigene Speisepilze im eigenen Haus oder Garten anzubauen; Speisepilzzucht in der Stadt"
       //   ],
-      //   [
-      //     "R.I.P. Stecken",
-      //     "2019:05:25 12:18:54+02:00",
-      //     "Anna",
-      //     require("../res/sticker-db/img4.jpg"),
-      //     [
-      //       {
-      //         lat: 50.932879,
-      //         lon: 6.932747,
-      //         added: "2019:05:22 10:42:54+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "unkown",
-      //       links: {
-      //         facebook: "https://www.facebook.com/pages/Stecken/106478066081421",
-      //         website:
-      //           "https://www.ksta.de/koeln/innenstadt/koelner-kult-club--stecken--szene-club-wird-ein-heizungskeller-2251162"
-      //       }
-      //     },
-      //     "Stecken ist ein ehemaliger Underground-Club in Köln und wurde 2014 dauerhauft geschlossen. Der Club im Keller eines Wohnhauses zog mehr als 20 Jahre lang junge Menschen aus der ganzen Welt an. Heute befindet sich dort ein Heizungskeller."
-      //   ],
+      [
+        "R.I.P. Stecken",
+        "2019:05:25 12:18:54+02:00",
+        "Anna",
+        "https://github.com/stereolith/schticker/blob/master/sticker-db/img4/img4.jpg",
+        [
+          {
+            lat: 50.932879,
+            lon: 6.932747,
+            added: "2019:05:22 10:42:54+02:00"
+          }
+        ],
+        {
+          name: "unkown",
+          links: {
+            facebook: "https://www.facebook.com/pages/Stecken/106478066081421",
+            website:
+              "https://www.ksta.de/koeln/innenstadt/koelner-kult-club--stecken--szene-club-wird-ein-heizungskeller-2251162"
+          }
+        },
+        "Stecken ist ein ehemaliger Underground-Club in Köln und wurde 2014 dauerhauft geschlossen. Der Club im Keller eines Wohnhauses zog mehr als 20 Jahre lang junge Menschen aus der ganzen Welt an. Heute befindet sich dort ein Heizungskeller."
+      ],
 
       //   [
       //     "fckng done.",
@@ -492,26 +411,26 @@ class NavWrapper extends Component {
       //     "Künstlerin aus Köln, die Illustrationen mit Text verbindet und diese auch auf Sticker bringt."
       //   ],
 
-      //   [
-      //     "Ja! Da!",
-      //     "2019:07:14 09:12:54+02:00",
-      //     "Kim",
-      //     require("../res/sticker-db/jada.jpg"),
-      //     [
-      //       {
-      //         lat: 50.5530888,
-      //         lon: 6.554941,
-      //         added: "2019:07:14 10:42:57+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "Ja! Da! Streetart",
-      //       links: {
-      //         instagram: "https://www.instagram.com/jada_streetart/"
-      //       }
-      //     },
-      //     "Streetart-Künstler aus Köln. Hauptsächlich größere Paste-ups mit Figuren aus Comics oder Zeichentrick und Sprechblasen."
-      //   ],
+      [
+        "Ja! Da!",
+        "2019:07:14 09:12:54+02:00",
+        "Kim",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/jada/jada.jpg",
+        [
+          {
+            lat: 50.5530888,
+            lon: 6.554941,
+            added: "2019:07:14 10:42:57+02:00"
+          }
+        ],
+        {
+          name: "Ja! Da! Streetart",
+          links: {
+            instagram: "https://www.instagram.com/jada_streetart/"
+          }
+        },
+        "Streetart-Künstler aus Köln. Hauptsächlich größere Paste-ups mit Figuren aus Comics oder Zeichentrick und Sprechblasen."
+      ],
 
       //   [
       //     "I am not a nugget",
@@ -536,27 +455,27 @@ class NavWrapper extends Component {
       //     "Sticker gegen den Konsum von Hühnerküken in Form von Chicken-Nuggets. Von der Tierschutz-Organisation PETA bzw. PETA ZWEI, der Jugendorganisation von PETA."
       //   ],
 
-      //   [
-      //     "Whalebomb",
-      //     "2019:07:14 09:12:54+02:00",
-      //     "Kim",
-      //     require("../res/sticker-db/pozt137.jpg"),
-      //     [
-      //       {
-      //         lat: 50.934879,
-      //         lon: 6.932744,
-      //         added: "2019:07:14 10:42:57+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "Pozt.137",
-      //       links: {
-      //         facebook: "https://www.facebook.com/pg/pozt.137/",
-      //         instagram: "https://www.instagram.com/pozt.137"
-      //       }
-      //     },
-      //     "Sticker Artist aus Düsseldorf. Bekannt für das Spiegelei-Motiv."
-      //   ],
+      [
+        "Whalebomb",
+        "2019:07:14 09:12:54+02:00",
+        "Kim",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/pozt137/pozt137.jpg",
+        [
+          {
+            lat: 50.934879,
+            lon: 6.932744,
+            added: "2019:07:14 10:42:57+02:00"
+          }
+        ],
+        {
+          name: "Pozt.137",
+          links: {
+            facebook: "https://www.facebook.com/pg/pozt.137/",
+            instagram: "https://www.instagram.com/pozt.137"
+          }
+        },
+        "Sticker Artist aus Düsseldorf. Bekannt für das Spiegelei-Motiv."
+      ],
 
       //   [
       //     "Pusher Tony",
@@ -579,27 +498,27 @@ class NavWrapper extends Component {
       //     "Tattoo-Künstler aus Köln. Pusher Tony kombiniert kultige Motive der 1980er Popkultur mit antiken Kunstmotiven."
       //   ],
 
-      //   [
-      //     "Alkoholfreie Radler Aktion",
-      //     "2019:07:14 09:12:54+02:00",
-      //     "Kim",
-      //     require("../res/sticker-db/radler.jpg"),
-      //     [
-      //       {
-      //         lat: 50.945178,
-      //         lon: 6.921422,
-      //         added: "2019:07:14 10:42:57+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "Alkoholfreie Radler Aktion",
-      //       links: {
-      //         facebook: "https://www.facebook.com/AlkoholfreieRadlerAktion/",
-      //         youtube: "https://www.youtube.com/channel/UCm5a0Askh_Oy21Y_LITbbPA"
-      //       }
-      //     },
-      //     "Politisch gesellschaftliche Bewegung gegen die Ächtung von alkoholfreiem Radler."
-      //   ],
+      [
+        "Alkoholfreie Radler Aktion",
+        "2019:07:14 09:12:54+02:00",
+        "Kim",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/radler/radler.jpg",
+        [
+          {
+            lat: 50.945178,
+            lon: 6.921422,
+            added: "2019:07:14 10:42:57+02:00"
+          }
+        ],
+        {
+          name: "Alkoholfreie Radler Aktion",
+          links: {
+            facebook: "https://www.facebook.com/AlkoholfreieRadlerAktion/",
+            youtube: "https://www.youtube.com/channel/UCm5a0Askh_Oy21Y_LITbbPA"
+          }
+        },
+        "Politisch gesellschaftliche Bewegung gegen die Ächtung von alkoholfreiem Radler."
+      ],
 
       //   [
       //     "Shut up and create",
@@ -623,48 +542,47 @@ class NavWrapper extends Component {
       //     "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
       //   ],
 
-      //   [
-      //     "Tuk",
-      //     "2019:07:14 09:12:54+02:00",
-      //     "Kim",
-      //     require("../res/sticker-db/tuk_cologne.jpg"),
-      //     [
-      //       {
-      //         lat: 50.555043,
-      //         lon: 6.56198,
-      //         added: "2019:07:14 10:42:57+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "Tuk Streetart",
-      //       links: {
-      //         facebook: "https://www.facebook.com/TukArts/",
-      //         instagram: "https://www.instagram.com/tuk_streetart"
-      //       }
-      //     },
-      //     'Straßenkünstler aus Köln mit Fokus auf Schablonen und ortsspezifische Paste-Ups (weltweit). "Cross roads. Cross borders. Cross minds." Dieser Sticker ist eine Anspielung auf den gleichnamigen Keks der Marke DeBeukelaer.'
-      //   ],
-
-      //   [
-      //     "Urban Nipple",
-      //     "2019:07:14 09:12:54+02:00",
-      //     "Kim",
-      //     require("../res/sticker-db/urbannipple.jpg"),
-      //     [
-      //       {
-      //         lat: 50.554998,
-      //         lon: 6.5619488,
-      //         added: "2019:07:14 10:42:57+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "Urban Nipple",
-      //       links: {
-      //         instagram: "https://www.instagram.com/urbannipple"
-      //       }
-      //     },
-      //     "Online-Initiative gegen das Sperren und Entfernen von Bildern auf Social-Media-Plattformen, auf denen Brustwarzen zu sehen sind."
-      //   ],
+      [
+        "Tuk",
+        "2019:07:14 09:12:54+02:00",
+        "Kim",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/tuk_cologne/tuk_cologne.jpg",
+        [
+          {
+            lat: 50.555043,
+            lon: 6.56198,
+            added: "2019:07:14 10:42:57+02:00"
+          }
+        ],
+        {
+          name: "Tuk Streetart",
+          links: {
+            facebook: "https://www.facebook.com/TukArts/",
+            instagram: "https://www.instagram.com/tuk_streetart"
+          }
+        },
+        'Straßenkünstler aus Köln mit Fokus auf Schablonen und ortsspezifische Paste-Ups (weltweit). "Cross roads. Cross borders. Cross minds." Dieser Sticker ist eine Anspielung auf den gleichnamigen Keks der Marke DeBeukelaer.'
+      ],
+      [
+        "Urban Nipple",
+        "2019:07:14 09:12:54+02:00",
+        "Kim",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/urbannipple/urbannipple.jpg",
+        [
+          {
+            lat: 50.554998,
+            lon: 6.5619488,
+            added: "2019:07:14 10:42:57+02:00"
+          }
+        ],
+        {
+          name: "Urban Nipple",
+          links: {
+            instagram: "https://www.instagram.com/urbannipple"
+          }
+        },
+        "Online-Initiative gegen das Sperren und Entfernen von Bildern auf Social-Media-Plattformen, auf denen Brustwarzen zu sehen sind."
+      ],
 
       //   [
       //     "Wa Da Da",
@@ -737,27 +655,27 @@ class NavWrapper extends Component {
       //     "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
       //   ],
 
-      //   [
-      //     "Whole Heart",
-      //     "2019:07:14 09:12:54+02:00",
-      //     "Kim",
-      //     require("../res/sticker-db/wholestreetheart.jpg"),
-      //     [
-      //       {
-      //         lat: 50.5534458,
-      //         lon: 6.5555092,
-      //         added: "2019:07:14 10:42:57+02:00"
-      //       }
-      //     ],
-      //     {
-      //       name: "wHOLE heART",
-      //       links: {
-      //         facebook: "https://www.facebook.com/HoleStreetart/",
-      //         instagram: "https://www.instagram.com/wholeheart74"
-      //       }
-      //     },
-      //     "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
-      //   ]
+      [
+        "(w)HOLE STREET (he)ART",
+        "2019:07:14 09:12:54+02:00",
+        "Kim",
+        "https://raw.githubusercontent.com/stereolith/schticker/master/sticker-db/wholestreetheart/wholestreetheart.jpg",
+        [
+          {
+            lat: 50.5534458,
+            lon: 6.5555092,
+            added: "2019:07:14 10:42:57+02:00"
+          }
+        ],
+        {
+          name: "wHOLE heART",
+          links: {
+            facebook: "https://www.facebook.com/HoleStreetart/",
+            instagram: "https://www.instagram.com/wholeheart74"
+          }
+        },
+        "Sticker & Pasteup Künstler aus Köln. Seine Sticker enthalten oft Wort- oder Motivspiele mit dem Künstlernamen."
+      ]
     ];
 
     this.props.selectSticker("");

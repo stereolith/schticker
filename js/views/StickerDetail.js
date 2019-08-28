@@ -29,7 +29,7 @@ class StickerDetail extends Component {
             <Image
               style={{ height: 150, width: 250, alignSelf: "center" }}
               resizeMode="contain"
-              source={ this.getImgSource() }
+              source={this.getImgSource(this.props.activeSticker.imageUrl)}
             />
           </View>
           <View style={localStyles.section}>
@@ -75,12 +75,12 @@ class StickerDetail extends Component {
     if (typeof src == "string") {
       return { uri: src };
     } else {
-      return src
+      return src;
     }
   }
 
   getMapSection() {
-    if (this.props.activeSticker.location.added != null) {
+    if (this.props.activeSticker.location[0].added != null) {
       return (
         <View style={localStyles.mapContainer}>
           <MapView
